@@ -76,8 +76,8 @@ namespace gerencia
             Privacidade privacidadeSelecionada = (Privacidade)Enum.Parse(typeof(Privacidade), privacidade);
 
             int num = UserSession.GetUserId();
-           
-           
+
+
             using (var db = new EventosContext())
             {
                 var novoEvento = new Evento
@@ -104,6 +104,48 @@ namespace gerencia
 
         private void cbM_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            using (var db = new EventosContext())
+            {
+                var evento = new Evento
+                {
+                    Nome = "Aniversário da Maria",
+                    Descricao = "Festa de aniversário da Maria",
+                    Data = new DateTime(2023, 04, 15),
+                    Horario = "19h",
+                    Localizacao = "Rua 123, São Paulo",
+                    Privacidade = Privacidade.SomenteConvidados,
+                    CriadorId = UserSession.GetUserId(),
+                    Guests = new List<Guest>
+        {
+            new Guest
+            {
+                UsuarioConvidado = new Usuario
+                {
+                    Nome = "João",
+                    Email = "joao@gmail.com",
+                    Senha = "123456"
+                }
+            },
+            new Guest
+            {
+                UsuarioConvidado = new Usuario
+                {
+                    Nome = "Maria",
+                    Email = "maria@gmail.com",
+                    Senha = "123456"
+                }
+            }
+        }
+                };
+
+                db.Eventos.Add(evento);
+                db.SaveChanges();
+            }
 
         }
     }

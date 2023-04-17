@@ -58,6 +58,7 @@ namespace gerencia
                 dataGridView1.Columns["Criador"].Visible = false;
                 dataGridView1.Columns["CriadorId"].Visible = false;
                 dataGridView1.Columns["IdEvento"].Visible = false;
+                dataGridView1.Columns["Guests"].Visible = false;
                 dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             }
 
@@ -118,6 +119,10 @@ namespace gerencia
 
         }
 
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
 

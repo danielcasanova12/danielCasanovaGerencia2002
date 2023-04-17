@@ -25,6 +25,7 @@ namespace gerencia
             cbM.Enabled = false;
             datammyy.Enabled = false;
             btnCancelar.Enabled = false;    
+            btnEditar.Enabled = false;  
 
         }
         private void FrmEditar_Load(object sender, EventArgs e)
@@ -108,6 +109,7 @@ namespace gerencia
                         comboBoxPrivacidade.Enabled = true;
                         cbH.Enabled = true;
                         cbM.Enabled = true;
+                        btnEditar.Enabled = true;
                         datammyy.Enabled = true;
                         inputId.Enabled = false;
                         btnCancelar.Enabled = true;
@@ -139,6 +141,7 @@ namespace gerencia
             comboBoxPrivacidade.Enabled = false;
             cbH.Enabled = false;
             cbM.Enabled = false;
+            btnEditar.Enabled = false;
             datammyy.Enabled = false;
             inputId.Enabled = true;
         }

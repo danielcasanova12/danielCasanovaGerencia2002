@@ -25,8 +25,18 @@ namespace gerencia.Model
         public string Localizacao { get; set; }
         public Usuario Criador { get; set; }
         public Privacidade Privacidade { get; set; }
+        public ICollection<Guest> Guests { get; set; }
     }
 
+    public class Guest
+    {
+        public int IdGuest { get; set; }
+        [ForeignKey("Evento")]
+        public int IdEvento { get; set; }
+        [ForeignKey("Usuario")]
+        public int IdUsuario { get; set; }
+        public Evento Evento { get; set; }
+        public Usuario UsuarioConvidado { get; set; }
+    }
 
-  
 }

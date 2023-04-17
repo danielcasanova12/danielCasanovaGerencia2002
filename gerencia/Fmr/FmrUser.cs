@@ -40,7 +40,7 @@ namespace gerencia.Fmr
             }
             using (var db = new EventosContext())
             {
-                string email = inputNome.Text;
+                string email = inputEmail.Text;
                 bool emailJaCadastrado = db.Usuarios.Any(u => u.Email == email);
                 if (emailJaCadastrado)
                 {
@@ -56,7 +56,7 @@ namespace gerencia.Fmr
                 {
                     var novoUser = new Usuario
                     {
-                        Nome = inputEmail.Text,
+                        Nome = inputNome.Text,
                         Email = email,
                         Senha = inputSenha.Text
 

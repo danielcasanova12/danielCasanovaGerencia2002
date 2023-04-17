@@ -32,6 +32,7 @@
             label1 = new Label();
             label2 = new Label();
             dataGridView3 = new DataGridView();
+            btnConvidados = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView3).BeginInit();
             SuspendLayout();
@@ -77,11 +78,22 @@
             dataGridView3.TabIndex = 43;
             dataGridView3.CellContentClick += dataGridView1_CellContentClick_1;
             // 
+            // btnConvidados
+            // 
+            btnConvidados.Location = new Point(513, 244);
+            btnConvidados.Name = "btnConvidados";
+            btnConvidados.Size = new Size(144, 23);
+            btnConvidados.TabIndex = 45;
+            btnConvidados.Text = "Adicionar convidados";
+            btnConvidados.UseVisualStyleBackColor = true;
+            btnConvidados.Click += btnConvidados_Click;
+            // 
             // FrmMyEventos
             // 
             AutoScaleDimensions = new SizeF(96F, 96F);
             AutoScaleMode = AutoScaleMode.Dpi;
             ClientSize = new Size(768, 487);
+            Controls.Add(btnConvidados);
             Controls.Add(label2);
             Controls.Add(dataGridView3);
             Controls.Add(label1);
@@ -102,5 +114,6 @@
         private Label label1;
         private Label label2;
         private DataGridView dataGridView3;
+        private Button btnConvidados;
     }
 }

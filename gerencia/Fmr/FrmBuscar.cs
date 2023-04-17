@@ -49,6 +49,7 @@ namespace gerencia
                 dataGridView4.Columns["Criador"].Visible = false;
                 dataGridView4.Columns["CriadorId"].Visible = false;
                 dataGridView4.Columns["IdEvento"].Visible = false;
+                dataGridView4.Columns["Guests"].Visible = false;
                 dataGridView4.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             }
         }

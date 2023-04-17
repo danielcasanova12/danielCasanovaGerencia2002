@@ -35,6 +35,7 @@ namespace gerencia
                 dataGridView5.DataSource = eventos;
                 dataGridView5.Columns["Criador"].Visible = false;
                 dataGridView5.Columns["CriadorId"].Visible = false;
+                dataGridView5.Columns["Guests"].Visible = false;
                 dataGridView5.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             }
         }
