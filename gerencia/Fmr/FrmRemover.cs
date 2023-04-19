@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using WinFormsApp4.model;
 namespace gerencia
 {
     public partial class FrmRemover : Form

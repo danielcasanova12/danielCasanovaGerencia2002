@@ -1,6 +1,5 @@
 ﻿using gerencia.Fmr;
 using gerencia.Model;
-using Microsoft.VisualStudio.VSHelp80;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinFormsApp4.model;
 
 namespace gerencia
 {
@@ -49,7 +49,7 @@ namespace gerencia
                 dataGridView2.Columns["Guests"].Visible = false;
                 dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
-                var eventosConvidado = context.Eventos.Where(e => e.Guests.Any(g => g.UsuarioConvidado.IdUsuario == idUsuarioLogado)).ToList();
+                var eventosConvidado = context.Eventos.Where(e => e.Guests.Any(g => g.UsuarioConvidadoIdUsuario == idUsuarioLogado)).ToList();
                 dataGridView3.DataSource = eventosConvidado;
                 dataGridView3.Columns["Criador"].Visible = false;
                 dataGridView3.Columns["CriadorId"].Visible = false;

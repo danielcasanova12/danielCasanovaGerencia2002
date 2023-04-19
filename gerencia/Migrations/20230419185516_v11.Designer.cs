@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using gerencia.Model;
 
@@ -10,9 +11,10 @@ using gerencia.Model;
 namespace gerencia.Migrations
 {
     [DbContext(typeof(EventosContext))]
-    partial class EventosContextModelSnapshot : ModelSnapshot
+    [Migration("20230419185516_v11")]
+    partial class v11
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -68,6 +70,9 @@ namespace gerencia.Migrations
                     b.Property<int>("IdEvento")
                         .HasColumnType("int");
 
+                    b.Property<int>("IdUsuario")
+                        .HasColumnType("int");
+
                     b.Property<int>("UsuarioConvidadoIdUsuario")
                         .HasColumnType("int");
 
@@ -77,7 +82,7 @@ namespace gerencia.Migrations
 
                     b.HasIndex("UsuarioConvidadoIdUsuario");
 
-                    b.ToTable("Guests");
+                    b.ToTable("Guest");
                 });
 
             modelBuilder.Entity("WinFormsApp4.model.Usuario", b =>

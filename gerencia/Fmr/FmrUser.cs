@@ -11,6 +11,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
+using WinFormsApp4.model;
+
 namespace gerencia.Fmr
 {
     public partial class FmrUser : Form

@@ -11,47 +11,48 @@ using gerencia.Model;
 namespace gerencia.Migrations
 {
     [DbContext(typeof(EventosContext))]
-    [Migration("20230414192748_Versao1")]
-    partial class Versao1
+    [Migration("20230419185324_v10")]
+    partial class v10
     {
-        /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
-            modelBuilder.HasAnnotation("ProductVersion", "7.0.5");
+            modelBuilder
+                .HasAnnotation("ProductVersion", "6.0.8")
+                .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
-            modelBuilder.Entity("gerencia.Model.Evento", b =>
+            modelBuilder.Entity("WinFormsApp4.model.Evento", b =>
                 {
                     b.Property<int>("IdEvento")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
+                        .HasColumnType("int");
 
                     b.Property<int>("CriadorId")
-                        .HasColumnType("INTEGER");
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("Data")
-                        .HasColumnType("TEXT");
+                        .HasColumnType("datetime(6)");
 
                     b.Property<string>("Descricao")
                         .IsRequired()
                         .HasMaxLength(400)
-                        .HasColumnType("TEXT");
+                        .HasColumnType("varchar(400)");
 
                     b.Property<string>("Horario")
                         .IsRequired()
-                        .HasColumnType("TEXT");
+                        .HasColumnType("longtext");
 
                     b.Property<string>("Localizacao")
                         .IsRequired()
-                        .HasColumnType("TEXT");
+                        .HasColumnType("longtext");
 
                     b.Property<string>("Nome")
                         .IsRequired()
                         .HasMaxLength(100)
-                        .HasColumnType("TEXT");
+                        .HasColumnType("varchar(100)");
 
                     b.Property<int>("Privacidade")
-                        .HasColumnType("INTEGER");
+                        .HasColumnType("int");
 
                     b.HasKey("IdEvento");
 
@@ -60,35 +61,36 @@ namespace gerencia.Migrations
                     b.ToTable("Eventos");
                 });
 
-            modelBuilder.Entity("gerencia.Model.Usuario", b =>
+            modelBuilder.Entity("WinFormsApp4.model.Usuario", b =>
                 {
                     b.Property<int>("IdUsuario")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
+                        .HasColumnType("int");
 
                     b.Property<string>("Email")
                         .IsRequired()
-                        .HasColumnType("TEXT");
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("longtext");
 
                     b.Property<string>("Nome")
                         .IsRequired()
-                        .HasColumnType("TEXT");
+                        .HasColumnType("longtext");
 
                     b.Property<string>("Senha")
                         .IsRequired()
-                        .HasColumnType("TEXT");
+                        .HasColumnType("longtext");
 
                     b.HasKey("IdUsuario");
 
                     b.ToTable("Usuarios");
                 });
 
-            modelBuilder.Entity("gerencia.Model.Evento", b =>
+            modelBuilder.Entity("WinFormsApp4.model.Evento", b =>
                 {
-                    b.HasOne("gerencia.Model.Usuario", "Criador")
+                    b.HasOne("WinFormsApp4.model.Usuario", "Criador")
                         .WithMany()
                         .HasForeignKey("CriadorId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Criador");

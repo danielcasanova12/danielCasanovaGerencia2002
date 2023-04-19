@@ -1,5 +1,6 @@
 using gerencia.Model;
 using System.Windows.Forms;
+using WinFormsApp4.model;
 
 namespace gerencia
 {

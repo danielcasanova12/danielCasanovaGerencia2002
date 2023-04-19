@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using WinFormsApp4.model;
 
 namespace gerencia.Fmr
 {
@@ -59,9 +60,9 @@ namespace gerencia.Fmr
                         int idUser = usuarioExistente.IdUsuario;
                         var guest1 = new Guest
                         {
-                            IdUsuario = idUser,
+                            UsuarioConvidadoIdUsuario = idUser,
                             IdEvento = eventoId,
-                            UsuarioConvidado = usuarioExistente,
+                            //UsuarioConvidado = usuarioExistente,
 
                         };
                         context.Guests.Add(guest1);
