@@ -1,5 +1,4 @@
-﻿
-using gerencia.Model;
+﻿using gerencia.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,9 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using WinFormsApp4.model;
+    
 
-namespace gerencia
+namespace gerencia.Views
 {
     public partial class FrmAdicionar : Form
     {
@@ -110,43 +109,53 @@ namespace gerencia
 
         private void button2_Click(object sender, EventArgs e)
         {
-            //    using (var db = new EventosContext())
-            //    {
-            //        var evento = new Evento
-            //        {
-            //            Nome = "Aniversário da Maria",
-            //            Descricao = "Festa de aniversário da Maria",
-            //            Data = new DateTime(2023, 04, 15),
-            //            Horario = "19h",
-            //            Localizacao = "Rua 123, São Paulo",
-            //            Privacidade = Privacidade.SomenteConvidados,
-            //            CriadorId = UserSession.GetUserId(),
-            ////            Guests = new List<Guest>
-            //{
-            //    new Guest
-            //    {
-            //        UsuarioConvidado = new Usuario
-            //        {
-            //            Nome = "João",
-            //            Email = "joao@gmail.com",
-            //            Senha = "123456"
-            //        }
-            //    },
-            //    new Guest
-            //    {
-            //        UsuarioConvidado = new Usuario
-            //        {
-            //            Nome = "Maria",
-            //            Email = "maria@gmail.com",
-            //            Senha = "123456"
-            //        }
-            //    }
-            //}
-            //        };
+            using (var db = new EventosContext())
+            {
+                var evento = new Evento
+                {
+                    Nome = "Aniversário da Maria",
+                    Descricao = "Festa de aniversário da Maria",
+                    Data = new DateTime(2023, 04, 15),
+                    Horario = "19h",
+                    Localizacao = "Rua 123, São Paulo",
+                    Privacidade = Privacidade.SomenteConvidados,
+                    CriadorId = UserSession.GetUserId(),
+                                Guests = new List<Guest>
+                    {
+                        new Guest
+                        {
+                            UsuarioConvidado = new Usuario
+                            {
+                                Nome = "João",
+                                Email = "joao@gmail.com",
+                                Senha = "123456"
+                            }
+                        },
+                        new Guest
+                        {
+                            UsuarioConvidado = new Usuario
+                            {
+                                Nome = "Maria",
+                                Email = "maria@gmail.com",
+                                Senha = "123456"
+                            }
+                        }
+                    }
+                };
 
-            //       db.Eventos.Add(evento);
-            //        db.SaveChanges();
-            // }
+                db.Eventos.Add(evento);
+                db.SaveChanges();
+            }
+
+        }
+
+        private void FrmAdicionar_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCadastrar_Click_1(object sender, EventArgs e)
+        {
 
         }
     }

@@ -1,4 +1,4 @@
-﻿using gerencia.Model;
+﻿using gerencia.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,9 +9,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-using WinFormsApp4.model;
 
-namespace gerencia
+
+namespace gerencia.Views
 {
     public partial class FrmEditar : Form
     {
@@ -145,6 +145,26 @@ namespace gerencia
             btnEditar.Enabled = false;
             datammyy.Enabled = false;
             inputId.Enabled = true;
+        }
+
+        private void FrmEditar_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBuscarid_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEditar_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCancelar_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

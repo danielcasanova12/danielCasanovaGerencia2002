@@ -1,4 +1,4 @@
-﻿using gerencia.Model;
+﻿
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,9 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using WinFormsApp4.model;
+using gerencia.Models;
 
-namespace gerencia
+namespace gerencia.Views
 {
     public partial class FrmBuscar : Form
     {
@@ -76,6 +76,16 @@ namespace gerencia
         }
 
         private void dataGridView4_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataGridView4_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void FrmBuscar_Load_1(object sender, EventArgs e)
         {
 
         }

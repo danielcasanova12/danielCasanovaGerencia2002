@@ -9,11 +9,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Fmr\FrmCadastrar.Designer.cs" />
+    <Compile Remove="Views\FrmCadastrar.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Remove="Fmr\FrmCadastrar.resx" />
+    <EmbeddedResource Remove="Views\FrmCadastrar.resx" />
   </ItemGroup>
 
   <ItemGroup>

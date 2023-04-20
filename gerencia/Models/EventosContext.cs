@@ -1,12 +1,11 @@
-﻿using gerencia.Model;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using WinFormsApp4.model;
+using gerencia.Models;
 
-namespace gerencia.Model
+namespace gerencia.Models
 
 {
     public class EventosContext : DbContext

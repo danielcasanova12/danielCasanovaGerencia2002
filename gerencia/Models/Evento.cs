@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WinFormsApp4.model
+namespace gerencia.Models
 {
     public enum Privacidade
     {
@@ -38,38 +38,10 @@ namespace WinFormsApp4.model
 
 
 
-    public class Usuario
-    {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int IdUsuario { get; set; }
-
-        [Required]
-        public string Nome { get; set; }
-
-        [Required]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public string Email { get; set; }
-
-        [Required]
-        public string Senha { get; set; }
-
-    }
 
 
-    public class Guest
-    {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int IdGuest { get; set; }
-        [ForeignKey("Evento")]
-        public int IdEvento { get; set; }
-        public Evento Evento { get; set; }
-        [ForeignKey("Usuario")]
-        public int UsuarioConvidadoIdUsuario { get; set; }
-        
-        public Usuario UsuarioConvidado { get; set; }
-    }
+
+
 
 
 

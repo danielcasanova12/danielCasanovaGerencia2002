@@ -1,5 +1,4 @@
-﻿using gerencia.Fmr;
-using gerencia.Model;
+﻿using gerencia.Views;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,9 +8,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using WinFormsApp4.model;
+using gerencia.Models;
 
-namespace gerencia
+namespace gerencia.Views
 {
     public partial class FrmMyEventos : Form
     {
@@ -102,6 +101,16 @@ namespace gerencia
             {
                 MessageBox.Show("Para adicionar convidados selecione o evento");
             }
+        }
+
+        private void FrmMyEventos_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnConvidados_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

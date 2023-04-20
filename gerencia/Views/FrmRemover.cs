@@ -1,4 +1,4 @@
-﻿using gerencia.Model;
+﻿using gerencia.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,8 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using WinFormsApp4.model;
-namespace gerencia
+
+namespace gerencia.Views
 {
     public partial class FrmRemover : Form
     {
@@ -126,6 +126,21 @@ namespace gerencia
                 MessageBox.Show("Evento removido com sucesso!");
                 AtualizarListaEventos();
             }
+        }
+
+        private void FrmRemover_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBuscar_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRmover_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

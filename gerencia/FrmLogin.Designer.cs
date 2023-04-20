@@ -28,100 +28,100 @@
         /// </summary>
         private void InitializeComponent()
         {
-            label1 = new Label();
-            label2 = new Label();
-            inputEmail = new TextBox();
-            inputSenha = new TextBox();
-            btnEnviar = new Button();
-            btnCancelar = new Button();
-            linkLabel1 = new LinkLabel();
-            SuspendLayout();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.inputEmail = new System.Windows.Forms.TextBox();
+            this.inputSenha = new System.Windows.Forms.TextBox();
+            this.btnEnviar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.SuspendLayout();
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(36, 231);
-            label1.Name = "label1";
-            label1.Size = new Size(36, 15);
-            label1.TabIndex = 0;
-            label1.Text = "Email";
-            label1.Click += label1_Click;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(36, 231);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(36, 15);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Email";
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(36, 302);
-            label2.Name = "label2";
-            label2.Size = new Size(39, 15);
-            label2.TabIndex = 1;
-            label2.Text = "Senha";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(36, 302);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(39, 15);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Senha";
             // 
             // inputEmail
             // 
-            inputEmail.Location = new Point(109, 223);
-            inputEmail.Name = "inputEmail";
-            inputEmail.Size = new Size(177, 23);
-            inputEmail.TabIndex = 2;
+            this.inputEmail.Location = new System.Drawing.Point(109, 223);
+            this.inputEmail.Name = "inputEmail";
+            this.inputEmail.Size = new System.Drawing.Size(177, 23);
+            this.inputEmail.TabIndex = 2;
             // 
             // inputSenha
             // 
-            inputSenha.Location = new Point(109, 294);
-            inputSenha.Name = "inputSenha";
-            inputSenha.Size = new Size(177, 23);
-            inputSenha.TabIndex = 3;
+            this.inputSenha.Location = new System.Drawing.Point(109, 294);
+            this.inputSenha.Name = "inputSenha";
+            this.inputSenha.Size = new System.Drawing.Size(177, 23);
+            this.inputSenha.TabIndex = 3;
             // 
             // btnEnviar
             // 
-            btnEnviar.Location = new Point(211, 424);
-            btnEnviar.Name = "btnEnviar";
-            btnEnviar.Size = new Size(75, 23);
-            btnEnviar.TabIndex = 4;
-            btnEnviar.Text = "Enviar";
-            btnEnviar.UseVisualStyleBackColor = true;
-            btnEnviar.Click += btnEnviar_Click;
+            this.btnEnviar.Location = new System.Drawing.Point(211, 424);
+            this.btnEnviar.Name = "btnEnviar";
+            this.btnEnviar.Size = new System.Drawing.Size(75, 23);
+            this.btnEnviar.TabIndex = 4;
+            this.btnEnviar.Text = "Enviar";
+            this.btnEnviar.UseVisualStyleBackColor = true;
+            this.btnEnviar.Click += new System.EventHandler(this.btnEnviar_Click);
             // 
             // btnCancelar
             // 
-            btnCancelar.Location = new Point(57, 424);
-            btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(75, 23);
-            btnCancelar.TabIndex = 5;
-            btnCancelar.Text = "Cancelar";
-            btnCancelar.UseVisualStyleBackColor = true;
-            btnCancelar.Click += btnCancelar_Click;
+            this.btnCancelar.Location = new System.Drawing.Point(57, 424);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.TabIndex = 5;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // linkLabel1
             // 
-            linkLabel1.AutoSize = true;
-            linkLabel1.Location = new Point(141, 473);
-            linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(65, 15);
-            linkLabel1.TabIndex = 6;
-            linkLabel1.TabStop = true;
-            linkLabel1.Text = "Criar conta";
-            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(141, 473);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(65, 15);
+            this.linkLabel1.TabIndex = 6;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "Criar conta";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // FrmLogin
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(326, 521);
-            Controls.Add(linkLabel1);
-            Controls.Add(btnCancelar);
-            Controls.Add(btnEnviar);
-            Controls.Add(inputSenha);
-            Controls.Add(inputEmail);
-            Controls.Add(label2);
-            Controls.Add(label1);
-            MaximizeBox = false;
-            MaximumSize = new Size(342, 560);
-            MinimizeBox = false;
-            MinimumSize = new Size(342, 560);
-            Name = "FrmLogin";
-            Text = "Form1";
-            Load += Form1_Load;
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(326, 521);
+            this.Controls.Add(this.linkLabel1);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btnEnviar);
+            this.Controls.Add(this.inputSenha);
+            this.Controls.Add(this.inputEmail);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(342, 560);
+            this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(342, 560);
+            this.Name = "FrmLogin";
+            this.Text = "Form1";
+            this.Load += new System.EventHandler(this.FrmLogin_Load);
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion

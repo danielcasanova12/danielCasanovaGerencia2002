@@ -1,4 +1,4 @@
-﻿using gerencia.Model;
+﻿using gerencia.Models;
 using System.Linq;
 using System;
 using System.Collections.Generic;
@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
-using gerencia.Fmr;
+using gerencia.Views;
 
 namespace gerencia
 
@@ -24,10 +24,7 @@ namespace gerencia
 
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
 
-        }
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -55,6 +52,7 @@ namespace gerencia
         // Função para validar o login do usuário
         private bool ValidarLogin(string email, string senha)
         {
+            if(email == "" || senha == "") { return false; }
             using (var db = new EventosContext())
             {
                 // consultar a tabela de usuários usando LINQ
@@ -91,6 +89,16 @@ namespace gerencia
             var criarUser = new FmrUser();
             criarUser.Show();
             this.Hide();
+        }
+
+        private void FrmLogin_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void linkLabel1_LinkClicked_1(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+
         }
     }
 

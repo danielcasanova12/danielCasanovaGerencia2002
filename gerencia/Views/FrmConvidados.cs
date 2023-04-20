@@ -1,4 +1,4 @@
-﻿using gerencia.Model;
+﻿using gerencia.Models;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -11,9 +11,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
-using WinFormsApp4.model;
 
-namespace gerencia.Fmr
+namespace gerencia.Views
 {
     public partial class FrmConvidados : Form
     {
@@ -90,6 +89,21 @@ namespace gerencia.Fmr
             {
                 this.Close();
             }
+        }
+
+        private void FrmConvidados_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEnviar_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCancelar_Click_1(object sender, EventArgs e)
+        {
+
         }
     }
 }

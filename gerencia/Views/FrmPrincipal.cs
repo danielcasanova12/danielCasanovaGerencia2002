@@ -1,8 +1,7 @@
-using gerencia.Model;
 using System.Windows.Forms;
-using WinFormsApp4.model;
+using gerencia.Models;
 
-namespace gerencia
+namespace gerencia.Views
 {
     public partial class Frm_principal : Form
     {
@@ -10,6 +9,7 @@ namespace gerencia
         public Frm_principal()
         {
             InitializeComponent();
+            AtualizarListaEventos();
             dataGridView1.ReadOnly = true;
             dataGridView1.CellClick += new DataGridViewCellEventHandler(dataGridView1_CellClick);
         }
@@ -124,6 +124,15 @@ namespace gerencia
         {
 
         }
+
+        private void panelForm_Paint_1(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        
+
+        
     }
 }
 
