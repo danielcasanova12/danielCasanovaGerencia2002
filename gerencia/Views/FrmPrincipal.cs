@@ -1,3 +1,4 @@
+
 using System.Windows.Forms;
 using gerencia.Models;
 
@@ -130,9 +131,9 @@ namespace gerencia.Views
 
         }
 
-        
 
-        
+
+
     }
 }
 

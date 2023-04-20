@@ -217,7 +217,7 @@
             this.panelForm.Name = "panelForm";
             this.panelForm.Size = new System.Drawing.Size(784, 526);
             this.panelForm.TabIndex = 1;
-            this.panelForm.Paint += new System.Windows.Forms.PaintEventHandler(this.panelForm_Paint_1);
+            this.panelForm.Paint += new System.Windows.Forms.PaintEventHandler(this.panelForm_Paint);
             // 
             // label1
             // 
@@ -228,6 +228,7 @@
             this.label1.Size = new System.Drawing.Size(327, 37);
             this.label1.TabIndex = 41;
             this.label1.Text = "Todos os eventos publicos";
+            
             // 
             // dataGridView1
             // 

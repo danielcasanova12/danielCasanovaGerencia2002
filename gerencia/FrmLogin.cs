@@ -1,4 +1,5 @@
 ﻿using gerencia.Models;
+using gerencia.Controllers;
 using System.Linq;
 using System;
 using System.Collections.Generic;
@@ -17,10 +18,12 @@ namespace gerencia
 {
     public partial class FrmLogin : Form
     {
+        private LoginController _loginController;
         public FrmLogin()
         {
             InitializeComponent();
             this.CenterToScreen();
+            _loginController = new LoginController();
 
         }
 
@@ -35,7 +38,7 @@ namespace gerencia
         {
             string email = inputEmail.Text;
             string senha = inputSenha.Text;
-            if (ValidarLogin(email, senha))
+            if (_loginController.ValidarLogin(email, senha))
             {
                 // Se o login for válido, abre o formulário principal
                 var a = new Frm_principal();
@@ -50,29 +53,7 @@ namespace gerencia
         }
 
         // Função para validar o login do usuário
-        private bool ValidarLogin(string email, string senha)
-        {
-            if(email == "" || senha == "") { return false; }
-            using (var db = new EventosContext())
-            {
-                // consultar a tabela de usuários usando LINQ
-                var usuario = db.Usuarios.FirstOrDefault(u => u.Email == email && u.Senha == senha);
-
-                // verificar se o usuário foi encontrado
-                if (usuario != null)
-                {
-                    UserSession.SetUserId(usuario.IdUsuario); //usuario.IdUsuario
-                    return true;
-                }
-                else
-                {
-                    // usuário não encontrado, mostrar mensagem de erro
-                    MessageBox.Show("Email ou senha incorretos.");
-                }
-                return false;
-            }
-
-        }
+     
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
