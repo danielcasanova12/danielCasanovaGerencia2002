@@ -28,82 +28,94 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.btnConvidados = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
-            this.SuspendLayout();
+            dataGridView2 = new DataGridView();
+            label1 = new Label();
+            label2 = new Label();
+            dataGridView3 = new DataGridView();
+            btnConvidados = new Button();
+            button1 = new Button();
+            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView3).BeginInit();
+            SuspendLayout();
             // 
             // dataGridView2
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(12, 40);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowTemplate.Height = 25;
-            this.dataGridView2.Size = new System.Drawing.Size(674, 167);
-            this.dataGridView2.TabIndex = 39;
+            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView2.Location = new Point(12, 40);
+            dataGridView2.Name = "dataGridView2";
+            dataGridView2.RowTemplate.Height = 25;
+            dataGridView2.Size = new Size(741, 167);
+            dataGridView2.TabIndex = 39;
+            dataGridView2.CellContentClick += dataGridView2_CellContentClick;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(12, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(125, 28);
-            this.label1.TabIndex = 42;
-            this.label1.Text = "Seus Eventos";
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(12, 9);
+            label1.Name = "label1";
+            label1.Size = new Size(125, 28);
+            label1.TabIndex = 42;
+            label1.Text = "Seus Eventos";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(12, 279);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(189, 28);
-            this.label2.TabIndex = 44;
-            this.label2.Text = "Eventos Convidados";
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(12, 279);
+            label2.Name = "label2";
+            label2.Size = new Size(189, 28);
+            label2.TabIndex = 44;
+            label2.Text = "Eventos Convidados";
             // 
             // dataGridView3
             // 
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(12, 310);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.RowTemplate.Height = 25;
-            this.dataGridView3.Size = new System.Drawing.Size(674, 141);
-            this.dataGridView3.TabIndex = 43;
+            dataGridView3.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView3.Location = new Point(12, 310);
+            dataGridView3.Name = "dataGridView3";
+            dataGridView3.RowTemplate.Height = 25;
+            dataGridView3.Size = new Size(741, 186);
+            dataGridView3.TabIndex = 43;
             // 
             // btnConvidados
             // 
-            this.btnConvidados.Location = new System.Drawing.Point(513, 244);
-            this.btnConvidados.Name = "btnConvidados";
-            this.btnConvidados.Size = new System.Drawing.Size(144, 23);
-            this.btnConvidados.TabIndex = 45;
-            this.btnConvidados.Text = "Adicionar convidados";
-            this.btnConvidados.UseVisualStyleBackColor = true;
-            this.btnConvidados.Click += new System.EventHandler(this.btnConvidados_Click);
+            btnConvidados.Location = new Point(605, 251);
+            btnConvidados.Name = "btnConvidados";
+            btnConvidados.Size = new Size(144, 23);
+            btnConvidados.TabIndex = 45;
+            btnConvidados.Text = "Adicionar convidados";
+            btnConvidados.UseVisualStyleBackColor = true;
+            btnConvidados.Click += btnConvidados_Click;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(431, 251);
+            button1.Name = "button1";
+            button1.Size = new Size(144, 23);
+            button1.TabIndex = 46;
+            button1.Text = "Ver convidados";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // FrmMyEventos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(768, 487);
-            this.Controls.Add(this.btnConvidados);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.dataGridView3);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.dataGridView2);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "FrmMyEventos";
-            this.Text = "FrmMyEventos";
-            this.Load += new System.EventHandler(this.FrmMyEventos_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(96F, 96F);
+            AutoScaleMode = AutoScaleMode.Dpi;
+            ClientSize = new Size(784, 526);
+            Controls.Add(button1);
+            Controls.Add(btnConvidados);
+            Controls.Add(label2);
+            Controls.Add(dataGridView3);
+            Controls.Add(label1);
+            Controls.Add(dataGridView2);
+            FormBorderStyle = FormBorderStyle.None;
+            Name = "FrmMyEventos";
+            Text = "FrmMyEventos";
+            Load += FrmMyEventos_Load;
+            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView3).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -113,5 +125,6 @@
         private Label label2;
         private DataGridView dataGridView3;
         private Button btnConvidados;
+        private Button button1;
     }
 }

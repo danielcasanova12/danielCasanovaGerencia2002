@@ -53,7 +53,7 @@ namespace gerencia
         }
 
         // Função para validar o login do usuário
-     
+
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {

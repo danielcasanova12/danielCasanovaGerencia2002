@@ -94,10 +94,10 @@ namespace gerencia.Views
 
 
                 }
-                
+
             }
 
-            if(idSelecionado == 0)
+            if (idSelecionado == 0)
             {
                 MessageBox.Show("Para adicionar convidados selecione o evento");
             }
@@ -109,6 +109,45 @@ namespace gerencia.Views
         }
 
         private void btnConvidados_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                using (var context = new EventosContext())
+                {
+                    var evento = context.Eventos.FirstOrDefault(e => e.IdEvento == idSelecionado);
+                    if (evento != null)
+                    {
+                        var convidados = context.Guests.Where(c => c.IdEvento == idSelecionado).ToList();
+                        if (convidados.Any())
+                        {
+                            FmrListaConvidados tela2 = new FmrListaConvidados(idSelecionado);
+                            tela2.Show();
+                        }
+                        else
+                        {
+                            MessageBox.Show("O evento selecionado não tem convidados.");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Evento não encontrado.");
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocorreu um erro ao carregar os convidados do evento: " + ex.Message);
+            }
+
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

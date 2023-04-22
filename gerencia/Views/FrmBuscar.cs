@@ -38,7 +38,7 @@ namespace gerencia.Views
         private void FrmBuscar_Load(object sender, EventArgs e)
         {
             AtualizarListaEventos();
-            
+
         }
         private void AtualizarListaEventos()
         {
@@ -54,7 +54,7 @@ namespace gerencia.Views
             }
         }
 
-            private void btnBuscarid_Click(object sender, EventArgs e)
+        private void btnBuscarid_Click(object sender, EventArgs e)
         {
             String pesquisa = inputPesquisa.Text;
             if (pesquisa == "")

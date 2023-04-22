@@ -28,235 +28,281 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panelPrincipal = new System.Windows.Forms.Panel();
-            this.btnMyEventos = new System.Windows.Forms.Button();
-            this.btnRemover = new System.Windows.Forms.Button();
-            this.btnEditar = new System.Windows.Forms.Button();
-            this.btnAdicionar = new System.Windows.Forms.Button();
-            this.btnBuscar = new System.Windows.Forms.Button();
-            this.btnHome = new System.Windows.Forms.Button();
-            this.panelLogo = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panelForm = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.panelPrincipal.SuspendLayout();
-            this.panelLogo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panelForm.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.SuspendLayout();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_principal));
+            panelPrincipal = new Panel();
+            btnMyEventos = new Button();
+            btnRemover = new Button();
+            btnEditar = new Button();
+            btnAdicionar = new Button();
+            btnBuscar = new Button();
+            btnHome = new Button();
+            panelLogo = new Panel();
+            pictureBox1 = new PictureBox();
+            panelForm = new Panel();
+            BtnAtualizar = new Button();
+            button2 = new Button();
+            button1 = new Button();
+            label1 = new Label();
+            dataGridView1 = new DataGridView();
+            panelPrincipal.SuspendLayout();
+            panelLogo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panelForm.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            SuspendLayout();
             // 
             // panelPrincipal
             // 
-            this.panelPrincipal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(100)))));
-            this.panelPrincipal.Controls.Add(this.btnMyEventos);
-            this.panelPrincipal.Controls.Add(this.btnRemover);
-            this.panelPrincipal.Controls.Add(this.btnEditar);
-            this.panelPrincipal.Controls.Add(this.btnAdicionar);
-            this.panelPrincipal.Controls.Add(this.btnBuscar);
-            this.panelPrincipal.Controls.Add(this.btnHome);
-            this.panelPrincipal.Controls.Add(this.panelLogo);
-            this.panelPrincipal.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelPrincipal.Location = new System.Drawing.Point(0, 0);
-            this.panelPrincipal.Name = "panelPrincipal";
-            this.panelPrincipal.Size = new System.Drawing.Size(200, 526);
-            this.panelPrincipal.TabIndex = 0;
+            panelPrincipal.BackColor = Color.FromArgb(0, 0, 100);
+            panelPrincipal.Controls.Add(btnMyEventos);
+            panelPrincipal.Controls.Add(btnRemover);
+            panelPrincipal.Controls.Add(btnEditar);
+            panelPrincipal.Controls.Add(btnAdicionar);
+            panelPrincipal.Controls.Add(btnBuscar);
+            panelPrincipal.Controls.Add(btnHome);
+            panelPrincipal.Controls.Add(panelLogo);
+            panelPrincipal.Dock = DockStyle.Left;
+            panelPrincipal.Location = new Point(0, 0);
+            panelPrincipal.Name = "panelPrincipal";
+            panelPrincipal.Size = new Size(200, 526);
+            panelPrincipal.TabIndex = 0;
             // 
             // btnMyEventos
             // 
-            this.btnMyEventos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnMyEventos.FlatAppearance.BorderSize = 0;
-            this.btnMyEventos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
-            this.btnMyEventos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btnMyEventos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMyEventos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnMyEventos.ForeColor = System.Drawing.Color.White;
-            this.btnMyEventos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMyEventos.Location = new System.Drawing.Point(0, 460);
-            this.btnMyEventos.Name = "btnMyEventos";
-            this.btnMyEventos.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnMyEventos.Size = new System.Drawing.Size(200, 64);
-            this.btnMyEventos.TabIndex = 6;
-            this.btnMyEventos.Text = "Seus Eventos";
-            this.btnMyEventos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnMyEventos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnMyEventos.UseVisualStyleBackColor = true;
-            this.btnMyEventos.Click += new System.EventHandler(this.btnMyEventos_Click);
+            btnMyEventos.Dock = DockStyle.Top;
+            btnMyEventos.FlatAppearance.BorderSize = 0;
+            btnMyEventos.FlatAppearance.MouseDownBackColor = Color.Blue;
+            btnMyEventos.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 192);
+            btnMyEventos.FlatStyle = FlatStyle.Flat;
+            btnMyEventos.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            btnMyEventos.ForeColor = Color.White;
+            btnMyEventos.Image = (Image)resources.GetObject("btnMyEventos.Image");
+            btnMyEventos.ImageAlign = ContentAlignment.MiddleLeft;
+            btnMyEventos.Location = new Point(0, 460);
+            btnMyEventos.Name = "btnMyEventos";
+            btnMyEventos.Padding = new Padding(10, 0, 0, 0);
+            btnMyEventos.Size = new Size(200, 64);
+            btnMyEventos.TabIndex = 6;
+            btnMyEventos.Text = "Seus Eventos";
+            btnMyEventos.TextAlign = ContentAlignment.MiddleLeft;
+            btnMyEventos.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnMyEventos.UseVisualStyleBackColor = true;
+            btnMyEventos.Click += btnMyEventos_Click;
             // 
             // btnRemover
             // 
-            this.btnRemover.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnRemover.FlatAppearance.BorderSize = 0;
-            this.btnRemover.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
-            this.btnRemover.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btnRemover.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRemover.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnRemover.ForeColor = System.Drawing.Color.White;
-            this.btnRemover.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRemover.Location = new System.Drawing.Point(0, 396);
-            this.btnRemover.Name = "btnRemover";
-            this.btnRemover.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnRemover.Size = new System.Drawing.Size(200, 64);
-            this.btnRemover.TabIndex = 5;
-            this.btnRemover.Text = "Remover Evento";
-            this.btnRemover.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRemover.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnRemover.UseVisualStyleBackColor = true;
-            this.btnRemover.Click += new System.EventHandler(this.btnRemover_Click);
+            btnRemover.Dock = DockStyle.Top;
+            btnRemover.FlatAppearance.BorderSize = 0;
+            btnRemover.FlatAppearance.MouseDownBackColor = Color.Blue;
+            btnRemover.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 192);
+            btnRemover.FlatStyle = FlatStyle.Flat;
+            btnRemover.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            btnRemover.ForeColor = Color.White;
+            btnRemover.Image = (Image)resources.GetObject("btnRemover.Image");
+            btnRemover.ImageAlign = ContentAlignment.MiddleLeft;
+            btnRemover.Location = new Point(0, 396);
+            btnRemover.Name = "btnRemover";
+            btnRemover.Padding = new Padding(10, 0, 0, 0);
+            btnRemover.Size = new Size(200, 64);
+            btnRemover.TabIndex = 5;
+            btnRemover.Text = "Remover Evento";
+            btnRemover.TextAlign = ContentAlignment.MiddleLeft;
+            btnRemover.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnRemover.UseVisualStyleBackColor = true;
+            btnRemover.Click += btnRemover_Click;
             // 
             // btnEditar
             // 
-            this.btnEditar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnEditar.FlatAppearance.BorderSize = 0;
-            this.btnEditar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
-            this.btnEditar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnEditar.ForeColor = System.Drawing.Color.White;
-            this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEditar.Location = new System.Drawing.Point(0, 332);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btnEditar.Size = new System.Drawing.Size(200, 64);
-            this.btnEditar.TabIndex = 4;
-            this.btnEditar.Text = "Editar Evento";
-            this.btnEditar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnEditar.UseVisualStyleBackColor = true;
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            btnEditar.Dock = DockStyle.Top;
+            btnEditar.FlatAppearance.BorderSize = 0;
+            btnEditar.FlatAppearance.MouseDownBackColor = Color.Blue;
+            btnEditar.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 192);
+            btnEditar.FlatStyle = FlatStyle.Flat;
+            btnEditar.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            btnEditar.ForeColor = Color.White;
+            btnEditar.Image = (Image)resources.GetObject("btnEditar.Image");
+            btnEditar.ImageAlign = ContentAlignment.MiddleLeft;
+            btnEditar.Location = new Point(0, 332);
+            btnEditar.Name = "btnEditar";
+            btnEditar.Padding = new Padding(15, 0, 0, 0);
+            btnEditar.Size = new Size(200, 64);
+            btnEditar.TabIndex = 4;
+            btnEditar.Text = "Editar Evento";
+            btnEditar.TextAlign = ContentAlignment.MiddleLeft;
+            btnEditar.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnEditar.UseVisualStyleBackColor = true;
+            btnEditar.Click += btnEditar_Click;
             // 
             // btnAdicionar
             // 
-            this.btnAdicionar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnAdicionar.FlatAppearance.BorderSize = 0;
-            this.btnAdicionar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
-            this.btnAdicionar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btnAdicionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdicionar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnAdicionar.ForeColor = System.Drawing.Color.White;
-            this.btnAdicionar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdicionar.Location = new System.Drawing.Point(0, 268);
-            this.btnAdicionar.Name = "btnAdicionar";
-            this.btnAdicionar.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnAdicionar.Size = new System.Drawing.Size(200, 64);
-            this.btnAdicionar.TabIndex = 3;
-            this.btnAdicionar.Text = "Adicionar Evento";
-            this.btnAdicionar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAdicionar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAdicionar.UseVisualStyleBackColor = true;
-            this.btnAdicionar.Click += new System.EventHandler(this.btnAdicionar_Click);
+            btnAdicionar.Dock = DockStyle.Top;
+            btnAdicionar.FlatAppearance.BorderSize = 0;
+            btnAdicionar.FlatAppearance.MouseDownBackColor = Color.Blue;
+            btnAdicionar.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 192);
+            btnAdicionar.FlatStyle = FlatStyle.Flat;
+            btnAdicionar.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            btnAdicionar.ForeColor = Color.White;
+            btnAdicionar.Image = (Image)resources.GetObject("btnAdicionar.Image");
+            btnAdicionar.ImageAlign = ContentAlignment.MiddleLeft;
+            btnAdicionar.Location = new Point(0, 268);
+            btnAdicionar.Name = "btnAdicionar";
+            btnAdicionar.Padding = new Padding(10, 0, 0, 0);
+            btnAdicionar.Size = new Size(200, 64);
+            btnAdicionar.TabIndex = 3;
+            btnAdicionar.Text = "Adicionar Evento";
+            btnAdicionar.TextAlign = ContentAlignment.MiddleLeft;
+            btnAdicionar.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnAdicionar.UseVisualStyleBackColor = true;
+            btnAdicionar.Click += btnAdicionar_Click;
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnBuscar.FlatAppearance.BorderSize = 0;
-            this.btnBuscar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
-            this.btnBuscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnBuscar.ForeColor = System.Drawing.Color.White;
-            this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBuscar.Location = new System.Drawing.Point(0, 204);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btnBuscar.Size = new System.Drawing.Size(200, 64);
-            this.btnBuscar.TabIndex = 2;
-            this.btnBuscar.Text = "Buscar Evento";
-            this.btnBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            btnBuscar.Dock = DockStyle.Top;
+            btnBuscar.FlatAppearance.BorderSize = 0;
+            btnBuscar.FlatAppearance.MouseDownBackColor = Color.Blue;
+            btnBuscar.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 192);
+            btnBuscar.FlatStyle = FlatStyle.Flat;
+            btnBuscar.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            btnBuscar.ForeColor = Color.White;
+            btnBuscar.Image = (Image)resources.GetObject("btnBuscar.Image");
+            btnBuscar.ImageAlign = ContentAlignment.MiddleLeft;
+            btnBuscar.Location = new Point(0, 204);
+            btnBuscar.Name = "btnBuscar";
+            btnBuscar.Padding = new Padding(15, 0, 0, 0);
+            btnBuscar.Size = new Size(200, 64);
+            btnBuscar.TabIndex = 2;
+            btnBuscar.Text = "Buscar Evento";
+            btnBuscar.TextAlign = ContentAlignment.MiddleLeft;
+            btnBuscar.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnBuscar.UseVisualStyleBackColor = true;
+            btnBuscar.Click += btnBuscar_Click;
             // 
             // btnHome
             // 
-            this.btnHome.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnHome.FlatAppearance.BorderSize = 0;
-            this.btnHome.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
-            this.btnHome.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnHome.ForeColor = System.Drawing.Color.White;
-            this.btnHome.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHome.Location = new System.Drawing.Point(0, 140);
-            this.btnHome.Name = "btnHome";
-            this.btnHome.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btnHome.Size = new System.Drawing.Size(200, 64);
-            this.btnHome.TabIndex = 1;
-            this.btnHome.Text = "Home";
-            this.btnHome.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHome.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnHome.UseVisualStyleBackColor = true;
-            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
+            btnHome.Dock = DockStyle.Top;
+            btnHome.FlatAppearance.BorderSize = 0;
+            btnHome.FlatAppearance.MouseDownBackColor = Color.Blue;
+            btnHome.FlatAppearance.MouseOverBackColor = Color.FromArgb(192, 0, 192);
+            btnHome.FlatStyle = FlatStyle.Flat;
+            btnHome.Font = new Font("Microsoft Sans Serif", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            btnHome.ForeColor = Color.White;
+            btnHome.Image = (Image)resources.GetObject("btnHome.Image");
+            btnHome.ImageAlign = ContentAlignment.MiddleLeft;
+            btnHome.Location = new Point(0, 140);
+            btnHome.Name = "btnHome";
+            btnHome.Padding = new Padding(15, 0, 0, 0);
+            btnHome.Size = new Size(200, 64);
+            btnHome.TabIndex = 1;
+            btnHome.Text = "Home";
+            btnHome.TextAlign = ContentAlignment.MiddleLeft;
+            btnHome.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnHome.UseVisualStyleBackColor = true;
+            btnHome.Click += btnHome_Click;
             // 
             // panelLogo
             // 
-            this.panelLogo.BackColor = System.Drawing.Color.Fuchsia;
-            this.panelLogo.Controls.Add(this.pictureBox1);
-            this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelLogo.Location = new System.Drawing.Point(0, 0);
-            this.panelLogo.Name = "panelLogo";
-            this.panelLogo.Size = new System.Drawing.Size(200, 140);
-            this.panelLogo.TabIndex = 0;
+            panelLogo.BackColor = Color.Fuchsia;
+            panelLogo.Controls.Add(pictureBox1);
+            panelLogo.Dock = DockStyle.Top;
+            panelLogo.Location = new Point(0, 0);
+            panelLogo.Name = "panelLogo";
+            panelLogo.Size = new Size(200, 140);
+            panelLogo.TabIndex = 0;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(-13, -16);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(226, 165);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(-13, -16);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(226, 165);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
             // 
             // panelForm
             // 
-            this.panelForm.Controls.Add(this.label1);
-            this.panelForm.Controls.Add(this.dataGridView1);
-            this.panelForm.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelForm.Location = new System.Drawing.Point(200, 0);
-            this.panelForm.Name = "panelForm";
-            this.panelForm.Size = new System.Drawing.Size(784, 526);
-            this.panelForm.TabIndex = 1;
-            this.panelForm.Paint += new System.Windows.Forms.PaintEventHandler(this.panelForm_Paint);
+            panelForm.Controls.Add(BtnAtualizar);
+            panelForm.Controls.Add(button2);
+            panelForm.Controls.Add(button1);
+            panelForm.Controls.Add(label1);
+            panelForm.Controls.Add(dataGridView1);
+            panelForm.Dock = DockStyle.Fill;
+            panelForm.Location = new Point(200, 0);
+            panelForm.Name = "panelForm";
+            panelForm.Size = new Size(784, 526);
+            panelForm.TabIndex = 1;
+            panelForm.Paint += panelForm_Paint;
+            // 
+            // BtnAtualizar
+            // 
+            BtnAtualizar.Location = new Point(288, 481);
+            BtnAtualizar.Name = "BtnAtualizar";
+            BtnAtualizar.Size = new Size(144, 23);
+            BtnAtualizar.TabIndex = 49;
+            BtnAtualizar.Text = "Atualizar";
+            BtnAtualizar.UseVisualStyleBackColor = true;
+            BtnAtualizar.Click += BtnAtualizar_Click;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(617, 481);
+            button2.Name = "button2";
+            button2.Size = new Size(144, 23);
+            button2.TabIndex = 48;
+            button2.Text = "Participar";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(457, 481);
+            button1.Name = "button1";
+            button1.Size = new Size(144, 23);
+            button1.TabIndex = 47;
+            button1.Text = "Participantes";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(221, 40);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(327, 37);
-            this.label1.TabIndex = 41;
-            this.label1.Text = "Todos os eventos publicos";
-            
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(221, 40);
+            label1.Name = "label1";
+            label1.Size = new Size(327, 37);
+            label1.TabIndex = 41;
+            label1.Text = "Todos os eventos publicos";
             // 
             // dataGridView1
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(19, 102);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(742, 358);
-            this.dataGridView1.TabIndex = 40;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(19, 102);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowTemplate.Height = 25;
+            dataGridView1.Size = new Size(742, 358);
+            dataGridView1.TabIndex = 40;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick_1;
             // 
             // Frm_principal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(984, 526);
-            this.Controls.Add(this.panelForm);
-            this.Controls.Add(this.panelPrincipal);
-            this.Name = "Frm_principal";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Gerenciamento de Eventos";
-            this.panelPrincipal.ResumeLayout(false);
-            this.panelLogo.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panelForm.ResumeLayout(false);
-            this.panelForm.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(96F, 96F);
+            AutoScaleMode = AutoScaleMode.Dpi;
+            ClientSize = new Size(984, 526);
+            Controls.Add(panelForm);
+            Controls.Add(panelPrincipal);
+            MaximizeBox = false;
+            MaximumSize = new Size(1000, 565);
+            MinimumSize = new Size(1000, 565);
+            Name = "Frm_principal";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Gerenciamento de Eventos";
+            panelPrincipal.ResumeLayout(false);
+            panelLogo.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            panelForm.ResumeLayout(false);
+            panelForm.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion
@@ -273,5 +319,8 @@
         private Panel panelForm;
         private Label label1;
         private DataGridView dataGridView1;
+        private Button button1;
+        private Button button2;
+        private Button BtnAtualizar;
     }
 }

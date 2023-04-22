@@ -71,7 +71,7 @@ namespace gerencia.Views
                 }
             }
 
-            
+
         }
 
         private void FmrUser_Load(object sender, EventArgs e)

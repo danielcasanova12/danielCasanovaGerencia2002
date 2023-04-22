@@ -1,6 +1,7 @@
 ﻿using gerencia.Models;
 using gerencia;
 using System.Linq;
+using System.Windows.Forms;
 
 namespace gerencia.Controllers
 {
@@ -8,24 +9,33 @@ namespace gerencia.Controllers
     {
         public bool ValidarLogin(string email, string senha)
         {
-            if (email == "" || senha == "") { return false; }
-            using (var db = new EventosContext())
+            try
             {
-                // consultar a tabela de usuários usando LINQ
-                var usuario = db.Usuarios.FirstOrDefault(u => u.Email == email && u.Senha == senha);
+                using (var db = new EventosContext())
+                {
+                    // consultar a tabela de usuários usando LINQ
+                    var usuario = db.Usuarios.FirstOrDefault(u => u.Email == email && u.Senha == senha);
 
-                // verificar se o usuário foi encontrado
-                if (usuario != null)
-                {
-                    UserSession.SetUserId(usuario.IdUsuario); //usuario.IdUsuario
-                    return true;
-                }
-                else
-                {
-                    return false;
+                    // verificar se o usuário foi encontrado
+                    if (usuario != null)
+                    {
+                        UserSession.SetUserId(usuario.IdUsuario); //usuario.IdUsuario
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
                 }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocorreu um erro: " + ex.Message);
+                return false;
+            }
+
         }
     }
+    
 }
 

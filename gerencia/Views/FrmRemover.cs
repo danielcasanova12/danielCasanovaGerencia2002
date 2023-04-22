@@ -142,5 +142,10 @@ namespace gerencia.Views
         {
 
         }
+
+        private void inputRemover_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

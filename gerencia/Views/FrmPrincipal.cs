@@ -1,12 +1,15 @@
 
 using System.Windows.Forms;
 using gerencia.Models;
+using Microsoft.Extensions.Logging;
+using Microsoft.VisualBasic.ApplicationServices;
 
 namespace gerencia.Views
 {
     public partial class Frm_principal : Form
     {
         private Form frmAtivo;
+        private int idSelecionado = 0;
         public Frm_principal()
         {
             InitializeComponent();
@@ -21,7 +24,7 @@ namespace gerencia.Views
             {
                 // Obtém o valor da célula na coluna de ID da linha selecionada
                 dataGridView1.Rows[e.RowIndex].Selected = true;
-                //idSelecionado = Convert.ToInt32(dataGridView5.Rows[e.RowIndex].Cells["Id"].Value);
+                idSelecionado = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["IdEvento"].Value);
             }
         }
         private void FormShow(Form frm)
@@ -131,9 +134,76 @@ namespace gerencia.Views
 
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
 
+            using (var context = new EventosContext())
+            {
+                var evento = context.Eventos.FirstOrDefault(e => e.IdEvento == idSelecionado);
+                if (evento != null)
+                {
+                    var convidados = context.Guests.Where(c => c.IdEvento == idSelecionado).ToList();
+                    if (convidados.Any())
+                    {
+                        FmrListaConvidados tela2 = new FmrListaConvidados(idSelecionado);
+                        tela2.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("O evento selecionado não tem convidados.");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Evento não encontrado.");
+                }
+            }
+        }
 
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int idUser = UserSession.GetUserId();
+                using (var context = new EventosContext())
+                {
+                    var existingGuest = context.Guests.FirstOrDefault(g => g.UsuarioConvidadoIdUsuario == idUser && g.IdEvento == idSelecionado);
+
+                    if (existingGuest != null)
+                    {
+                        // Se já estiver participando, exibir mensagem de aviso e sair do método
+                        MessageBox.Show("Você já está participando deste evento!");
+                        return;
+                    }
+                    var guest1 = new Guest
+                    {
+                        UsuarioConvidadoIdUsuario = idUser,
+                        IdEvento = idSelecionado,
+                        //UsuarioConvidado = usuarioExistente,
+                    };
+                    context.Guests.Add(guest1);
+                    context.SaveChanges();
+
+                    MessageBox.Show("Agora você está participando do evento!");
+                }
+
+            }
+            catch
+            {
+                MessageBox.Show("Selecione um evento");
+            }
+
+        }
+
+        private void BtnAtualizar_Click(object sender, EventArgs e)
+        {
+            AtualizarListaEventos();
+        }
     }
 }
 

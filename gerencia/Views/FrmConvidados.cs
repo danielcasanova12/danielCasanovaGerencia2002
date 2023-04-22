@@ -20,6 +20,7 @@ namespace gerencia.Views
         public FrmConvidados(int numero)
         {
             InitializeComponent();
+            this.CenterToScreen();
             this.numeroRecebido = numero;
         }
 
