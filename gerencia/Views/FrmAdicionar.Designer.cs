@@ -202,7 +202,7 @@
 
         #endregion
 
-        private Button button1;
+
         private TextBox inputNome;
         private TextBox inputDescricao;
         private DateTimePicker datammyy;
@@ -215,7 +215,6 @@
         private Label label5;
         private Label label6;
         private Button btnCadastrar;
-        private Button btnCancelar;
         private DateTimePicker dateTimePicker;
         private Button button2;
     }

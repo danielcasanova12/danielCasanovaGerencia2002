@@ -14,7 +14,8 @@ namespace gerencia.Views
 {
     public partial class FrmMyEventos : Form
     {
-        private int idSelecionado = 0;
+        private int _idSelecionado = 0;
+        private int _pagina = 1;
         public FrmMyEventos()
         {
             InitializeComponent();
@@ -29,7 +30,7 @@ namespace gerencia.Views
             {
                 // Obtém o valor da célula na coluna de ID da linha selecionada
                 dataGridView2.Rows[e.RowIndex].Selected = true;
-                idSelecionado = Convert.ToInt32(dataGridView2.Rows[e.RowIndex].Cells["IdEvento"].Value);
+                _idSelecionado = Convert.ToInt32(dataGridView2.Rows[e.RowIndex].Cells["IdEvento"].Value);
             }
         }
         private void FrmMyEventos_Load(object sender, EventArgs e)
@@ -78,13 +79,13 @@ namespace gerencia.Views
         {
             using (var context = new EventosContext())
             {
-                var evento = context.Eventos.FirstOrDefault(e => e.IdEvento == idSelecionado);
+                var evento = context.Eventos.FirstOrDefault(e => e.IdEvento == _idSelecionado);
                 if (evento != null)
                 {
                     Privacidade privacidade = evento.Privacidade;
                     if (privacidade != Privacidade.Publico)
                     {
-                        FrmConvidados tela2 = new FrmConvidados(idSelecionado);
+                        FrmConvidados tela2 = new FrmConvidados(_idSelecionado);
                         tela2.Show();
                     }
                     else
@@ -97,7 +98,7 @@ namespace gerencia.Views
 
             }
 
-            if (idSelecionado == 0)
+            if (_idSelecionado == 0)
             {
                 MessageBox.Show("Para adicionar convidados selecione o evento");
             }
@@ -120,13 +121,13 @@ namespace gerencia.Views
             {
                 using (var context = new EventosContext())
                 {
-                    var evento = context.Eventos.FirstOrDefault(e => e.IdEvento == idSelecionado);
+                    var evento = context.Eventos.FirstOrDefault(e => e.IdEvento == _idSelecionado);
                     if (evento != null)
                     {
-                        var convidados = context.Guests.Where(c => c.IdEvento == idSelecionado).ToList();
+                        var convidados = context.Guests.Where(c => c.IdEvento == _idSelecionado).ToList();
                         if (convidados.Any())
                         {
-                            FmrListaConvidados tela2 = new FmrListaConvidados(idSelecionado);
+                            FmrListaConvidados tela2 = new FmrListaConvidados(_idSelecionado, _pagina);
                             tela2.Show();
                         }
                         else

@@ -13,7 +13,7 @@ namespace gerencia.Views
 {
     public partial class FrmRemover : Form
     {
-        private int idSelecionado;
+        private int _idSelecionado;
         public FrmRemover()
         {
             InitializeComponent();

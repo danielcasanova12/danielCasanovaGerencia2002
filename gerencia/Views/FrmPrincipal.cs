@@ -9,7 +9,8 @@ namespace gerencia.Views
     public partial class Frm_principal : Form
     {
         private Form frmAtivo;
-        private int idSelecionado = 0;
+        private int _idSelecionado = 0;
+        private int _pagina = 0;
         public Frm_principal()
         {
             InitializeComponent();
@@ -24,7 +25,7 @@ namespace gerencia.Views
             {
                 // Obtém o valor da célula na coluna de ID da linha selecionada
                 dataGridView1.Rows[e.RowIndex].Selected = true;
-                idSelecionado = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["IdEvento"].Value);
+                _idSelecionado = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["IdEvento"].Value);
             }
         }
         private void FormShow(Form frm)
@@ -134,18 +135,18 @@ namespace gerencia.Views
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnParticipantes_Click(object sender, EventArgs e)
         {
 
             using (var context = new EventosContext())
             {
-                var evento = context.Eventos.FirstOrDefault(e => e.IdEvento == idSelecionado);
+                var evento = context.Eventos.FirstOrDefault(e => e.IdEvento == _idSelecionado);
                 if (evento != null)
                 {
-                    var convidados = context.Guests.Where(c => c.IdEvento == idSelecionado).ToList();
+                    var convidados = context.Guests.Where(c => c.IdEvento == _idSelecionado).ToList();
                     if (convidados.Any())
                     {
-                        FmrListaConvidados tela2 = new FmrListaConvidados(idSelecionado);
+                        FmrListaConvidados tela2 = new FmrListaConvidados(_idSelecionado,_pagina);
                         tela2.Show();
                     }
                     else
@@ -165,14 +166,14 @@ namespace gerencia.Views
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnParticipa_Click(object sender, EventArgs e)
         {
             try
             {
                 int idUser = UserSession.GetUserId();
                 using (var context = new EventosContext())
                 {
-                    var existingGuest = context.Guests.FirstOrDefault(g => g.UsuarioConvidadoIdUsuario == idUser && g.IdEvento == idSelecionado);
+                    var existingGuest = context.Guests.FirstOrDefault(g => g.UsuarioConvidadoIdUsuario == idUser && g.IdEvento == _idSelecionado);
 
                     if (existingGuest != null)
                     {
@@ -183,13 +184,14 @@ namespace gerencia.Views
                     var guest1 = new Guest
                     {
                         UsuarioConvidadoIdUsuario = idUser,
-                        IdEvento = idSelecionado,
+                        IdEvento = _idSelecionado,
                         //UsuarioConvidado = usuarioExistente,
                     };
                     context.Guests.Add(guest1);
                     context.SaveChanges();
 
-                    MessageBox.Show("Agora você está participando do evento!");
+                    MessageBox.Show("Voce está participando!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                 }
 
             }
@@ -200,10 +202,17 @@ namespace gerencia.Views
 
         }
 
-        private void BtnAtualizar_Click(object sender, EventArgs e)
+
+        private void BtnAtualizar_Click_1(object sender, EventArgs e)
         {
             AtualizarListaEventos();
         }
+
+
+
+
+
+
     }
 }
 

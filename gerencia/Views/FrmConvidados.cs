@@ -16,12 +16,12 @@ namespace gerencia.Views
 {
     public partial class FrmConvidados : Form
     {
-        private int numeroRecebido;
+        private int _numeroRecebido;
         public FrmConvidados(int numero)
         {
             InitializeComponent();
             this.CenterToScreen();
-            this.numeroRecebido = numero;
+            this._numeroRecebido = numero;
         }
 
         private void label5_Click(object sender, EventArgs e)
@@ -42,7 +42,7 @@ namespace gerencia.Views
         {
             using (var context = new EventosContext())
             {
-                var evento = context.Eventos.FirstOrDefault(e => e.IdEvento == numeroRecebido);
+                var evento = context.Eventos.FirstOrDefault(e => e.IdEvento == _numeroRecebido);
                 if (evento != null)
                 {
                     string email = inputEmail.Text;

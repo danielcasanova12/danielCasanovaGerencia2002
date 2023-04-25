@@ -17,7 +17,7 @@ namespace gerencia.Models
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
 
-            optionsBuilder.UseMySql("server=localhost;database=banco2023222222222;user=root;password=",
+            optionsBuilder.UseMySql("server=localhost;database=xxx;user=root;password=",
                                     new MySqlServerVersion("10.4.28-MariaDB")); // versão do servidor MySQL
         }
     }

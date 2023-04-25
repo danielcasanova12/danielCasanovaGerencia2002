@@ -16,11 +16,13 @@ namespace gerencia.Views
     {
         private int _numero = 0;
         private int _idSelecionado;
-        public FmrListaConvidados(int numero)
+        private int _pagina;
+        public FmrListaConvidados(int numero,int pagina)
         {
             InitializeComponent();
             this.CenterToScreen();
             this._numero = numero;
+            this._pagina = pagina;
             dataGridView2.ReadOnly = true;
             dataGridView2.CellClick += new DataGridViewCellEventHandler(dataGridView2_CellClick);
         }
@@ -41,6 +43,10 @@ namespace gerencia.Views
         private void FmrListaConvidados_Load(object sender, EventArgs e)
         {
             atualiza();
+            if(_pagina == 0)
+            {
+                BtnDeletar.Enabled = false;
+            }
         }
         private void atualiza()
         {
