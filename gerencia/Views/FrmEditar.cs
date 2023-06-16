@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-
+using gerencia.Enuns;
 
 namespace gerencia.Views
 {
@@ -56,7 +56,7 @@ namespace gerencia.Views
                 {
                     var evento = context.Eventos.FirstOrDefault(e => e.IdEvento == id);
                     int num = UserSession.GetUserId();
-                    if (num != evento.CriadorId)
+                    if (num != evento.IdCriadorEvento)
                     {
                         MessageBox.Show("ID inserido não coresponde ao seus eventos", "Erro ID não existe", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
@@ -78,12 +78,12 @@ namespace gerencia.Views
 
                     }
                     Privacidade privacidadeSelecionada = (Privacidade)Enum.Parse(typeof(Privacidade), privacidade);
-                    evento.Nome = nome;
-                    evento.Descricao = descricao;
-                    evento.Data = data;
-                    evento.Horario = horaSelecionadaString;
-                    evento.Localizacao = localizacao;
-                    evento.Privacidade = privacidadeSelecionada;
+                    evento.NomeEvento = nome;
+                    evento.DescricaoEvento = descricao;
+                    evento.DataEvento = data;
+                    evento.HorarioEvento = horaSelecionadaString;
+                    evento.LocalizacaoEvento = localizacao;
+                    evento.PrivacidadeEvento = privacidadeSelecionada;
                     context.SaveChanges();
                     MessageBox.Show("Evento editado");
                     limpar();
@@ -123,7 +123,7 @@ namespace gerencia.Views
                     int id = int.Parse(inputId.Text);
                     var evento = context.Eventos.FirstOrDefault(e => e.IdEvento == id);
                     int num = UserSession.GetUserId();
-                    if (num != evento.CriadorId)
+                    if (num != evento.IdCriadorEvento)
                     {
                         MessageBox.Show("ID inserido não coresponde ao seus eventos", "Erro ID não existe", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         limpar();
@@ -142,15 +142,15 @@ namespace gerencia.Views
                         inputId.Enabled = false;
                         btnCancelar.Enabled = true;
                         // Preenche os campos com os dados do evento
-                        string horaString = evento.Horario; // valor do horário armazenado no banco de dados
+                        string horaString = evento.HorarioEvento; // valor do horário armazenado no banco de dados
                         DateTime hora = DateTime.ParseExact(horaString, "HH:mm:ss", CultureInfo.InvariantCulture);
                         dateTimePicker.Value = DateTime.Today.Add(hora.TimeOfDay);
-                        inputNome.Text = evento.Nome;
-                        inputDescricao.Text = evento.Descricao;
-                        datammyy.Value = evento.Data;
+                        inputNome.Text = evento.NomeEvento;
+                        inputDescricao.Text = evento.DescricaoEvento;
+                        datammyy.Value = evento.DataEvento;
                         dateTimePicker.Value = dateTimePicker.Value;
-                        inputLocalizacao.Text = evento.Localizacao;
-                        comboBoxPrivacidade.SelectedIndex = (int)evento.Privacidade;
+                        inputLocalizacao.Text = evento.LocalizacaoEvento;
+                        comboBoxPrivacidade.SelectedIndex = (int)evento.PrivacidadeEvento;
                     }
                     else
                     {

@@ -18,15 +18,29 @@ namespace gerencia.Models
         public int IdUsuario { get; set; }
 
         [Required]
-        public string Nome { get; set; }
+        public string NomeUsuario { get; set; }
 
         [Required]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public string Email { get; set; }
+        public string EmailUsuario { get; set; }
 
         [Required]
-        public string Senha { get; set; }
+        public string SenhaUsuario { get; set; }
 
+    }
+    public class UserSession
+    {
+        private static int userId;
+
+        public static void SetUserId(int userId)
+        {
+            UserSession.userId = userId;
+        }
+
+        public static int GetUserId()
+        {
+            return UserSession.userId;
+        }
     }
 
 }
@@ -37,17 +51,4 @@ namespace gerencia.Models
 
 
 
-public static class UserSession
-{
-    private static int userId;
 
-    public static void SetUserId(int userId)
-    {
-        UserSession.userId = userId;
-    }
-
-    public static int GetUserId()
-    {
-        return UserSession.userId;
-    }
-}

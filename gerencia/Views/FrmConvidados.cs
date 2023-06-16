@@ -46,12 +46,12 @@ namespace gerencia.Views
                 if (evento != null)
                 {
                     string email = inputEmail.Text;
-                    var usuarioExistente = context.Usuarios.FirstOrDefault(u => u.Email == email);
+                    var usuarioExistente = context.Usuarios.FirstOrDefault(u => u.EmailUsuario == email);
 
                     if (usuarioExistente != null)
                     {
                         int eventoId = evento.IdEvento;
-                        var guestExistente = context.Guests.FirstOrDefault(g => g.UsuarioConvidado.Email == email && g.IdEvento == eventoId);
+                        var guestExistente = context.Guests.FirstOrDefault(g => g.UsuarioGuest.EmailUsuario == email && g.IdEventoGuest == eventoId);
                         if (guestExistente != null)
                         {
                             MessageBox.Show("Esse usuário já foi convidado!");
@@ -60,8 +60,8 @@ namespace gerencia.Views
                         int idUser = usuarioExistente.IdUsuario;
                         var guest1 = new Guest
                         {
-                            UsuarioConvidadoIdUsuario = idUser,
-                            IdEvento = eventoId,
+                            UsuarioGuestIdUsuario = idUser,
+                            IdEventoGuest = eventoId,
                             //UsuarioConvidado = usuarioExistente,
 
                         };

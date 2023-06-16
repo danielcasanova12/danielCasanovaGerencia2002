@@ -31,7 +31,7 @@ namespace gerencia.Views
             using (var db = new EventosContext())
             {
                 int idUsuarioLogado = UserSession.GetUserId();
-                var eventos = db.Eventos.Where(e => e.CriadorId == idUsuarioLogado).ToList();
+                var eventos = db.Eventos.Where(e => e.IdCriadorEvento == idUsuarioLogado).ToList();
                 dataGridView5.DataSource = eventos;
                 dataGridView5.Columns["Criador"].Visible = false;
                 dataGridView5.Columns["CriadorId"].Visible = false;
@@ -58,7 +58,7 @@ namespace gerencia.Views
             {
                 using (var db = new EventosContext())
                 {
-                    var eventos = db.Eventos.Where(e => e.CriadorId == idUsuarioLogado).ToList();
+                    var eventos = db.Eventos.Where(e => e.IdCriadorEvento == idUsuarioLogado).ToList();
                     dataGridView5.DataSource = eventos;
                     dataGridView5.Columns["Criador"].Visible = false;
                     dataGridView5.Columns["CriadorId"].Visible = false;
@@ -72,7 +72,7 @@ namespace gerencia.Views
                 int pesquisa2 = int.Parse(inputRemover.Text);
                 using (var db = new EventosContext())
                 {
-                    var eventosPublicos = db.Eventos.Where(e => e.IdEvento == pesquisa2 && e.CriadorId == idUsuarioLogado).ToList();
+                    var eventosPublicos = db.Eventos.Where(e => e.IdEvento == pesquisa2 && e.IdCriadorEvento == idUsuarioLogado).ToList();
                     dataGridView5.DataSource = eventosPublicos;
                     dataGridView5.Columns["Criador"].Visible = false;
                     dataGridView5.Columns["CriadorId"].Visible = false;
@@ -84,7 +84,7 @@ namespace gerencia.Views
             {
                 using (var db = new EventosContext())
                 {
-                    var eventosPublicos = db.Eventos.Where((e => (e.Nome.Contains(pesquisa) || e.Localizacao.Contains(pesquisa)) && e.CriadorId == idUsuarioLogado)).ToList();
+                    var eventosPublicos = db.Eventos.Where((e => (e.NomeEvento.Contains(pesquisa) || e.LocalizacaoEvento.Contains(pesquisa)) && e.IdCriadorEvento == idUsuarioLogado)).ToList();
                     dataGridView5.DataSource = eventosPublicos;
                     dataGridView5.Columns["Criador"].Visible = false;
                     dataGridView5.Columns["CriadorId"].Visible = false;

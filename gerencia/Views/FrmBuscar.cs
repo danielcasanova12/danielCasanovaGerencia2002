@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using gerencia.Models;
-
+using gerencia.Enuns;
 namespace gerencia.Views
 {
     public partial class FrmBuscar : Form
@@ -44,7 +44,7 @@ namespace gerencia.Views
         {
             using (var db = new EventosContext())
             {
-                var eventosPublicos = db.Eventos.Where(e => e.Privacidade == Privacidade.Publico).ToList();
+                var eventosPublicos = db.Eventos.Where(e => e.PrivacidadeEvento == Privacidade.Publico).ToList();
                 dataGridView4.DataSource = eventosPublicos;
                 dataGridView4.Columns["Criador"].Visible = false;
                 dataGridView4.Columns["CriadorId"].Visible = false;
@@ -65,7 +65,7 @@ namespace gerencia.Views
             {
                 using (var db = new EventosContext())
                 {
-                    var eventosPublicos = db.Eventos.Where(e => e.Nome.Contains(pesquisa) || e.Localizacao.Contains(pesquisa)).ToList();
+                    var eventosPublicos = db.Eventos.Where(e => e.NomeEvento.Contains(pesquisa) || e.LocalizacaoEvento.Contains(pesquisa)).ToList();
                     dataGridView4.DataSource = eventosPublicos;
                     dataGridView4.Columns["Criador"].Visible = false;
                     dataGridView4.Columns["CriadorId"].Visible = false;

@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using gerencia.Enuns;
 
 namespace gerencia.Views
 {
@@ -71,13 +71,13 @@ namespace gerencia.Views
             {
                 var novoEvento = new Evento
                 {
-                    CriadorId = num,
-                    Nome = nome,
-                    Descricao = descricao,
-                    Data = data,
-                    Horario = horaSelecionadaString,
-                    Localizacao = localizacao,
-                    Privacidade = privacidadeSelecionada
+                    IdCriadorEvento = num,
+                    NomeEvento = nome,
+                    DescricaoEvento = descricao,
+                    DataEvento = data,
+                    HorarioEvento = horaSelecionadaString,
+                    LocalizacaoEvento = localizacao,
+                    PrivacidadeEvento = privacidadeSelecionada
                 };
                 db.Eventos.Add(novoEvento);
                 db.SaveChanges();
@@ -102,72 +102,59 @@ namespace gerencia.Views
             {
                 var evento = new Evento
                 {
-                    Nome = "Aniversário da Maria",
-                    Descricao = "Festa de aniversário da Maria",
-                    Data = new DateTime(2023, 04, 15),
-                    Horario = "19:09:09",
-                    Localizacao = "Rua 123, São Paulo",
-                    Privacidade = Privacidade.SomenteConvidados,
-                    CriadorId = UserSession.GetUserId(),
-                    Guests = new List<Guest>
+                    NomeEvento = "Aniversário da Maria",
+                    DescricaoEvento = "Festa de aniversário da Maria",
+                    DataEvento = new DateTime(2023, 04, 15),
+                    HorarioEvento = "19:09:09",
+                    LocalizacaoEvento = "Rua 123, São Paulo",
+                    PrivacidadeEvento = Privacidade.SomenteConvidados,
+                    IdCriadorEvento = UserSession.GetUserId(),
+                    GuestsEvento = new List<Guest>
                     {
                         new Guest
                         {
-                            UsuarioConvidado = new Usuario
-                            {
-                                Nome = "João",
-                                Email = "joao@gmail.com",
-                                Senha = "123456"
-                            }
+                            UsuarioGuest = new Usuario
+                            {NomeUsuario = "João", EmailUsuario = "joao@gmail.com", SenhaUsuario = "123456"}
                         },
                         new Guest
                         {
-                            UsuarioConvidado = new Usuario
-                            {
-                                Nome = "Maria",
-                                Email = "maria@gmail.com",
-                                Senha = "123456"
-                            }
+                            UsuarioGuest = new Usuario
+                            {NomeUsuario = "Maria", EmailUsuario = "maria@gmail.com", SenhaUsuario = "123456"}
                         },
                         new Guest
                         {
-                            UsuarioConvidado = new Usuario
+                            UsuarioGuest = new Usuario
                             {
-                                Nome = "Joana",
-                                Email = "Joana@gmail.com",
-                                Senha = "123456"
+                                NomeUsuario = "Joana",
+                                EmailUsuario = "Joana@gmail.com",
+                                SenhaUsuario = "123456"
 
                              }
                         },
                         new Guest
                         {
-                            UsuarioConvidado = new Usuario
+                            UsuarioGuest = new Usuario
                             {
-                                Nome = "Claudio",
-                                Email = "Claudio@gmail.com",
-                                Senha = "123456"
+                                NomeUsuario = "Claudio",
+                                EmailUsuario = "Claudio@gmail.com",
+                                SenhaUsuario = "123456"
 
                              }
                         },
                         new Guest
                         {
-                            UsuarioConvidado = new Usuario
+                            UsuarioGuest = new Usuario
                             {
-                                Nome = "Daniel",
-                                Email = "Daniel@gmail.com",
-                                Senha = "123456"
+                                NomeUsuario = "Daniel",
+                                EmailUsuario = "Daniel@gmail.com",
+                                SenhaUsuario = "123456"
 
                              }
                         },
                         new Guest
                         {
-                            UsuarioConvidado = new Usuario
-                            {
-                                Nome = "Everton",
-                                Email = "Everton@gmail.com",
-                                Senha = "123456"
-
-                             }
+                            UsuarioGuest = new Usuario
+                            {NomeUsuario = "Everton", EmailUsuario = "Everton@gmail.com", SenhaUsuario = "123456"}
                         }
                     }
                 };

@@ -14,7 +14,7 @@ namespace gerencia.Controllers
                 using (var db = new EventosContext())
                 {
                     // consultar a tabela de usuários usando LINQ
-                    var usuario = db.Usuarios.FirstOrDefault(u => u.Email == email && u.Senha == senha);
+                    var usuario = db.Usuarios.FirstOrDefault(u => u.EmailUsuario == email && u.SenhaUsuario == senha);
 
                     // verificar se o usuário foi encontrado
                     if (usuario != null)

@@ -3,7 +3,7 @@ using System.Windows.Forms;
 using gerencia.Models;
 using Microsoft.Extensions.Logging;
 using Microsoft.VisualBasic.ApplicationServices;
-
+using gerencia.Enuns;
 namespace gerencia.Views
 {
     public partial class Frm_principal : Form
@@ -59,7 +59,7 @@ namespace gerencia.Views
         {
             using (var db = new EventosContext())
             {
-                var eventosPublicos = db.Eventos.Where(e => e.Privacidade == Privacidade.Publico).ToList();
+                var eventosPublicos = db.Eventos.Where(e => e.PrivacidadeEvento == Privacidade.Publico).ToList();
                 dataGridView1.DataSource = eventosPublicos;
                 dataGridView1.Columns["Criador"].Visible = false;
                 dataGridView1.Columns["CriadorId"].Visible = false;
@@ -143,7 +143,7 @@ namespace gerencia.Views
                 var evento = context.Eventos.FirstOrDefault(e => e.IdEvento == _idSelecionado);
                 if (evento != null)
                 {
-                    var convidados = context.Guests.Where(c => c.IdEvento == _idSelecionado).ToList();
+                    var convidados = context.Guests.Where(c => c.IdEventoGuest == _idSelecionado).ToList();
                     if (convidados.Any())
                     {
                         FmrListaConvidados tela2 = new FmrListaConvidados(_idSelecionado,_pagina);
@@ -173,7 +173,7 @@ namespace gerencia.Views
                 int idUser = UserSession.GetUserId();
                 using (var context = new EventosContext())
                 {
-                    var existingGuest = context.Guests.FirstOrDefault(g => g.UsuarioConvidadoIdUsuario == idUser && g.IdEvento == _idSelecionado);
+                    var existingGuest = context.Guests.FirstOrDefault(g => g.UsuarioGuestIdUsuario == idUser && g.IdEventoGuest == _idSelecionado);
 
                     if (existingGuest != null)
                     {
@@ -183,8 +183,8 @@ namespace gerencia.Views
                     }
                     var guest1 = new Guest
                     {
-                        UsuarioConvidadoIdUsuario = idUser,
-                        IdEvento = _idSelecionado,
+                        UsuarioGuestIdUsuario = idUser,
+                        IdEventoGuest = _idSelecionado,
                         //UsuarioConvidado = usuarioExistente,
                     };
                     context.Guests.Add(guest1);

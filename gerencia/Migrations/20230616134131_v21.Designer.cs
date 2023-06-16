@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using gerencia.Models;
 
@@ -10,9 +11,10 @@ using gerencia.Models;
 namespace gerencia.Migrations
 {
     [DbContext(typeof(EventosContext))]
-    partial class EventosContextModelSnapshot : ModelSnapshot
+    [Migration("20230616134131_v21")]
+    partial class v21
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

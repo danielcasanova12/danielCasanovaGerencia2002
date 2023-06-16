@@ -14,11 +14,11 @@ namespace gerencia.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int IdGuest { get; set; }
         [ForeignKey("Evento")]
-        public int IdEvento { get; set; }
-        public Evento Evento { get; set; }
+        public int IdEventoGuest { get; set; }
+        public Evento EventoGuest { get; set; }
         [ForeignKey("Usuario")]
-        public int UsuarioConvidadoIdUsuario { get; set; }
+        public int UsuarioGuestIdUsuario { get; set; }
 
-        public Usuario UsuarioConvidado { get; set; }
+        public Usuario UsuarioGuest { get; set; }
     }
 }

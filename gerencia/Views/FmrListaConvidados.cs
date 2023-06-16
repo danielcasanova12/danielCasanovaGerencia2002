@@ -56,12 +56,12 @@ namespace gerencia.Views
             {
                 // Obter todos os convidados do evento com id 3
                 var convidados = (from g in db.Guests
-                                  where g.IdEvento == _numero
+                                  where g.IdEventoGuest == _numero
                                   select new
                                   {
                                       IdGuest = g.IdGuest,
-                                      Nome = g.UsuarioConvidado.Nome,
-                                      Email = g.UsuarioConvidado.Email
+                                      Nome = g.UsuarioGuest.NomeUsuario,
+                                      Email = g.UsuarioGuest.EmailUsuario
                                   }).ToList();
                 var bindingSource = new BindingSource();
                 bindingSource.DataSource = convidados;

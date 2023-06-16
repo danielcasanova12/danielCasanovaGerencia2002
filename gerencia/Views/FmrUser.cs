@@ -41,7 +41,7 @@ namespace gerencia.Views
             using (var db = new EventosContext())
             {
                 string email = inputEmail.Text;
-                bool emailJaCadastrado = db.Usuarios.Any(u => u.Email == email);
+                bool emailJaCadastrado = db.Usuarios.Any(u => u.EmailUsuario == email);
                 if (emailJaCadastrado)
                 {
                     MessageBox.Show("Este email já está sendo usado, por favor escolha outro.",
@@ -56,9 +56,9 @@ namespace gerencia.Views
                 {
                     var novoUser = new Usuario
                     {
-                        Nome = inputNome.Text,
-                        Email = email,
-                        Senha = inputSenha.Text
+                        NomeUsuario = inputNome.Text,
+                        EmailUsuario = email,
+                        SenhaUsuario = inputSenha.Text
 
                     };
                     db.Usuarios.Add(novoUser);

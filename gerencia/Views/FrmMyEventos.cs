@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using gerencia.Models;
+using gerencia.Enuns;
 
 namespace gerencia.Views
 {
@@ -39,7 +40,7 @@ namespace gerencia.Views
             using (var context = new EventosContext())
             {
                 int idUsuarioLogado = UserSession.GetUserId();
-                var eventos = context.Eventos.Where(e => e.CriadorId == idUsuarioLogado).ToList();
+                var eventos = context.Eventos.Where(e => e.IdCriadorEvento == idUsuarioLogado).ToList();
 
                 dataGridView2.DataSource = eventos;
 
@@ -49,7 +50,7 @@ namespace gerencia.Views
                 dataGridView2.Columns["Guests"].Visible = false;
                 dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
-                var eventosConvidado = context.Eventos.Where(e => e.Guests.Any(g => g.UsuarioConvidadoIdUsuario == idUsuarioLogado)).ToList();
+                var eventosConvidado = context.Eventos.Where(e => e.GuestsEvento.Any(g => g.UsuarioGuestIdUsuario == idUsuarioLogado)).ToList();
                 dataGridView3.DataSource = eventosConvidado;
                 dataGridView3.Columns["Criador"].Visible = false;
                 dataGridView3.Columns["CriadorId"].Visible = false;
@@ -82,7 +83,7 @@ namespace gerencia.Views
                 var evento = context.Eventos.FirstOrDefault(e => e.IdEvento == _idSelecionado);
                 if (evento != null)
                 {
-                    Privacidade privacidade = evento.Privacidade;
+                    Privacidade privacidade = evento.PrivacidadeEvento;
                     if (privacidade != Privacidade.Publico)
                     {
                         FrmConvidados tela2 = new FrmConvidados(_idSelecionado);
@@ -124,7 +125,7 @@ namespace gerencia.Views
                     var evento = context.Eventos.FirstOrDefault(e => e.IdEvento == _idSelecionado);
                     if (evento != null)
                     {
-                        var convidados = context.Guests.Where(c => c.IdEvento == _idSelecionado).ToList();
+                        var convidados = context.Guests.Where(c => c.IdEventoGuest == _idSelecionado).ToList();
                         if (convidados.Any())
                         {
                             FmrListaConvidados tela2 = new FmrListaConvidados(_idSelecionado, _pagina);
