@@ -45,17 +45,17 @@ namespace gerencia.Views
                 dataGridView2.DataSource = eventos;
 
                 //// Define as colunas "Criador" e "Id" como invisíveis
-                dataGridView2.Columns["Criador"].Visible = false;
-                dataGridView2.Columns["CriadorId"].Visible = false;
-                dataGridView2.Columns["Guests"].Visible = false;
+                dataGridView2.Columns["CriadorEvento"].Visible = false;
+                dataGridView2.Columns["IdCriadorEvento"].Visible = false;
+                dataGridView2.Columns["GuestsEvento"].Visible = false;
                 dataGridView2.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
                 var eventosConvidado = context.Eventos.Where(e => e.GuestsEvento.Any(g => g.UsuarioGuestIdUsuario == idUsuarioLogado)).ToList();
                 dataGridView3.DataSource = eventosConvidado;
-                dataGridView3.Columns["Criador"].Visible = false;
-                dataGridView3.Columns["CriadorId"].Visible = false;
+                dataGridView3.Columns["CriadorEvento"].Visible = false;
+                dataGridView3.Columns["IdCriadorEvento"].Visible = false;
                 dataGridView3.Columns["IdEvento"].Visible = false;
-                dataGridView3.Columns["Guests"].Visible = false;
+                dataGridView3.Columns["GuestsEvento"].Visible = false;
                 dataGridView3.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
 

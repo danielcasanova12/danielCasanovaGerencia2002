@@ -33,9 +33,9 @@ namespace gerencia.Views
                 int idUsuarioLogado = UserSession.GetUserId();
                 var eventos = db.Eventos.Where(e => e.IdCriadorEvento == idUsuarioLogado).ToList();
                 dataGridView5.DataSource = eventos;
-                dataGridView5.Columns["Criador"].Visible = false;
-                dataGridView5.Columns["CriadorId"].Visible = false;
-                dataGridView5.Columns["Guests"].Visible = false;
+                dataGridView5.Columns["CriadorEvento"].Visible = false;
+                dataGridView5.Columns["IdCriadorEvento"].Visible = false;
+                dataGridView5.Columns["GuestsEvento"].Visible = false;
                 dataGridView5.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             }
         }
@@ -60,8 +60,8 @@ namespace gerencia.Views
                 {
                     var eventos = db.Eventos.Where(e => e.IdCriadorEvento == idUsuarioLogado).ToList();
                     dataGridView5.DataSource = eventos;
-                    dataGridView5.Columns["Criador"].Visible = false;
-                    dataGridView5.Columns["CriadorId"].Visible = false;
+                    dataGridView5.Columns["CriadorEvento"].Visible = false;
+                    dataGridView5.Columns["IdCriadorEvento"].Visible = false;
                     dataGridView5.Columns["IdEvento"].Visible = false;
                     dataGridView5.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                     return;
@@ -74,8 +74,8 @@ namespace gerencia.Views
                 {
                     var eventosPublicos = db.Eventos.Where(e => e.IdEvento == pesquisa2 && e.IdCriadorEvento == idUsuarioLogado).ToList();
                     dataGridView5.DataSource = eventosPublicos;
-                    dataGridView5.Columns["Criador"].Visible = false;
-                    dataGridView5.Columns["CriadorId"].Visible = false;
+                    dataGridView5.Columns["CriadorEvento"].Visible = false;
+                    dataGridView5.Columns["IdCriadorEvento"].Visible = false;
                     dataGridView5.Columns["IdEvento"].Visible = false;
                     dataGridView5.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                 }
@@ -86,8 +86,8 @@ namespace gerencia.Views
                 {
                     var eventosPublicos = db.Eventos.Where((e => (e.NomeEvento.Contains(pesquisa) || e.LocalizacaoEvento.Contains(pesquisa)) && e.IdCriadorEvento == idUsuarioLogado)).ToList();
                     dataGridView5.DataSource = eventosPublicos;
-                    dataGridView5.Columns["Criador"].Visible = false;
-                    dataGridView5.Columns["CriadorId"].Visible = false;
+                    dataGridView5.Columns["CriadorEvento"].Visible = false;
+                    dataGridView5.Columns["IdCriadorEvento"].Visible = false;
                     dataGridView5.Columns["IdEvento"].Visible = false;
                     dataGridView5.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                 }

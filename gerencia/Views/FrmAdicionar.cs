@@ -47,6 +47,7 @@ namespace gerencia.Views
         private void btnCadastrar_Click(object sender, EventArgs e)
         {
             string nome = inputNome.Text;
+            inputNome.Text = UserSession.GetUserId().ToString();
             string descricao = inputDescricao.Text;
             DateTime dataCompleta = datammyy.Value;
             DateTime data = dataCompleta.Date;
@@ -108,7 +109,7 @@ namespace gerencia.Views
                     HorarioEvento = "19:09:09",
                     LocalizacaoEvento = "Rua 123, São Paulo",
                     PrivacidadeEvento = Privacidade.SomenteConvidados,
-                    IdCriadorEvento = UserSession.GetUserId(),
+                    CriadorEventoIdUsuario = 1,
                     GuestsEvento = new List<Guest>
                     {
                         new Guest

@@ -122,8 +122,6 @@ namespace gerencia.Views
                 MessageBox.Show("Selecione um convidado para excluir");
 
             }
-
-               // 
             
         }
     }

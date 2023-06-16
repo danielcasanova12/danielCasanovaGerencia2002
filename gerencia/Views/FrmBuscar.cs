@@ -46,10 +46,10 @@ namespace gerencia.Views
             {
                 var eventosPublicos = db.Eventos.Where(e => e.PrivacidadeEvento == Privacidade.Publico).ToList();
                 dataGridView4.DataSource = eventosPublicos;
-                dataGridView4.Columns["Criador"].Visible = false;
-                dataGridView4.Columns["CriadorId"].Visible = false;
+                dataGridView4.Columns["CriadorEvento"].Visible = false;
+                dataGridView4.Columns["IdCriadorEvento"].Visible = false;
                 dataGridView4.Columns["IdEvento"].Visible = false;
-                dataGridView4.Columns["Guests"].Visible = false;
+                dataGridView4.Columns["GuestsEvento"].Visible = false;
                 dataGridView4.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             }
         }
@@ -67,8 +67,8 @@ namespace gerencia.Views
                 {
                     var eventosPublicos = db.Eventos.Where(e => e.NomeEvento.Contains(pesquisa) || e.LocalizacaoEvento.Contains(pesquisa)).ToList();
                     dataGridView4.DataSource = eventosPublicos;
-                    dataGridView4.Columns["Criador"].Visible = false;
-                    dataGridView4.Columns["CriadorId"].Visible = false;
+                    dataGridView4.Columns["CriadorEvento"].Visible = false;
+                    dataGridView4.Columns["IdCriadorEvento"].Visible = false;
                     dataGridView4.Columns["IdEvento"].Visible = false;
                     dataGridView4.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
                 }

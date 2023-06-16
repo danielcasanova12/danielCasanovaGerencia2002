@@ -11,8 +11,8 @@ using gerencia.Models;
 namespace gerencia.Migrations
 {
     [DbContext(typeof(EventosContext))]
-    [Migration("20230419201429_v12")]
-    partial class v12
+    [Migration("20230616154250_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -21,84 +21,89 @@ namespace gerencia.Migrations
                 .HasAnnotation("ProductVersion", "6.0.8")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
-            modelBuilder.Entity("WinFormsApp4.model.Evento", b =>
+            modelBuilder.Entity("gerencia.Models.Evento", b =>
                 {
                     b.Property<int>("IdEvento")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int>("CriadorId")
+                    b.Property<int>("CriadorEventoIdUsuario")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("Data")
+                    b.Property<DateTime>("DataEvento")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<string>("Descricao")
+                    b.Property<string>("DescricaoEvento")
                         .IsRequired()
                         .HasMaxLength(400)
                         .HasColumnType("varchar(400)");
 
-                    b.Property<string>("Horario")
+                    b.Property<string>("HorarioEvento")
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<string>("Localizacao")
+                    b.Property<int>("IdCriadorEvento")
+                        .HasColumnType("int");
+
+                    b.Property<string>("LocalizacaoEvento")
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<string>("Nome")
+                    b.Property<string>("NomeEvento")
                         .IsRequired()
                         .HasMaxLength(100)
                         .HasColumnType("varchar(100)");
 
-                    b.Property<int>("Privacidade")
+                    b.Property<int>("PrivacidadeEvento")
                         .HasColumnType("int");
 
                     b.HasKey("IdEvento");
 
-                    b.HasIndex("CriadorId");
+                    b.HasIndex("CriadorEventoIdUsuario");
 
                     b.ToTable("Eventos");
                 });
 
-            modelBuilder.Entity("WinFormsApp4.model.Guest", b =>
+            modelBuilder.Entity("gerencia.Models.Guest", b =>
                 {
                     b.Property<int>("IdGuest")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int?>("EventoIdEvento")
+                    b.Property<int>("EventoGuestIdEvento")
                         .HasColumnType("int");
 
-                    b.Property<int>("IdEvento")
+                    b.Property<int>("IdEventoGuest")
                         .HasColumnType("int");
 
-                    b.Property<int>("IdUsuario")
+                    b.Property<int>("UsuarioGuestIdUsuario")
                         .HasColumnType("int");
 
                     b.HasKey("IdGuest");
 
-                    b.HasIndex("EventoIdEvento");
+                    b.HasIndex("EventoGuestIdEvento");
+
+                    b.HasIndex("UsuarioGuestIdUsuario");
 
                     b.ToTable("Guests");
                 });
 
-            modelBuilder.Entity("WinFormsApp4.model.Usuario", b =>
+            modelBuilder.Entity("gerencia.Models.Usuario", b =>
                 {
                     b.Property<int>("IdUsuario")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<string>("Email")
+                    b.Property<string>("EmailUsuario")
                         .IsRequired()
                         .ValueGeneratedOnAdd()
                         .HasColumnType("longtext");
 
-                    b.Property<string>("Nome")
+                    b.Property<string>("NomeUsuario")
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<string>("Senha")
+                    b.Property<string>("SenhaUsuario")
                         .IsRequired()
                         .HasColumnType("longtext");
 
@@ -107,27 +112,39 @@ namespace gerencia.Migrations
                     b.ToTable("Usuarios");
                 });
 
-            modelBuilder.Entity("WinFormsApp4.model.Evento", b =>
+            modelBuilder.Entity("gerencia.Models.Evento", b =>
                 {
-                    b.HasOne("WinFormsApp4.model.Usuario", "Criador")
+                    b.HasOne("gerencia.Models.Usuario", "CriadorEvento")
                         .WithMany()
-                        .HasForeignKey("CriadorId")
+                        .HasForeignKey("CriadorEventoIdUsuario")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Criador");
+                    b.Navigation("CriadorEvento");
                 });
 
-            modelBuilder.Entity("WinFormsApp4.model.Guest", b =>
+            modelBuilder.Entity("gerencia.Models.Guest", b =>
                 {
-                    b.HasOne("WinFormsApp4.model.Evento", null)
-                        .WithMany("Guests")
-                        .HasForeignKey("EventoIdEvento");
+                    b.HasOne("gerencia.Models.Evento", "EventoGuest")
+                        .WithMany("GuestsEvento")
+                        .HasForeignKey("EventoGuestIdEvento")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("gerencia.Models.Usuario", "UsuarioGuest")
+                        .WithMany()
+                        .HasForeignKey("UsuarioGuestIdUsuario")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("EventoGuest");
+
+                    b.Navigation("UsuarioGuest");
                 });
 
-            modelBuilder.Entity("WinFormsApp4.model.Evento", b =>
+            modelBuilder.Entity("gerencia.Models.Evento", b =>
                 {
-                    b.Navigation("Guests");
+                    b.Navigation("GuestsEvento");
                 });
 #pragma warning restore 612, 618
         }

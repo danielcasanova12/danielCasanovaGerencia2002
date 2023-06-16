@@ -61,10 +61,10 @@ namespace gerencia.Views
             {
                 var eventosPublicos = db.Eventos.Where(e => e.PrivacidadeEvento == Privacidade.Publico).ToList();
                 dataGridView1.DataSource = eventosPublicos;
-                dataGridView1.Columns["Criador"].Visible = false;
-                dataGridView1.Columns["CriadorId"].Visible = false;
+                dataGridView1.Columns["CriadorEvento"].Visible = false;
+                dataGridView1.Columns["IdCriadorEvento"].Visible = false;
                 dataGridView1.Columns["IdEvento"].Visible = false;
-                dataGridView1.Columns["Guests"].Visible = false;
+                dataGridView1.Columns["GuestsEvento"].Visible = false;
                 dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             }
 
