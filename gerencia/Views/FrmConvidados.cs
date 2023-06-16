@@ -51,36 +51,31 @@ namespace gerencia.Views
                     if (usuarioExistente != null)
                     {
                         int eventoId = evento.IdEvento;
-                        var guestExistente = context.Guests.FirstOrDefault(g => g.UsuarioGuest.EmailUsuario == email && g.IdEventoGuest == eventoId);
+                        var guestExistente = context.Guests.FirstOrDefault(g => g.UsuarioGuest.EmailUsuario == email && g.EventoGuestIdEvento == eventoId);
                         if (guestExistente != null)
                         {
                             MessageBox.Show("Esse usuário já foi convidado!");
                             return;
                         }
+
                         int idUser = usuarioExistente.IdUsuario;
                         var guest1 = new Guest
                         {
                             UsuarioGuestIdUsuario = idUser,
-                            IdEventoGuest = eventoId,
-                            //UsuarioConvidado = usuarioExistente,
-
+                            EventoGuestIdEvento = eventoId
                         };
+
                         context.Guests.Add(guest1);
                         context.SaveChanges();
 
                         MessageBox.Show("Convite enviado");
-                        return;
                     }
                     else
                     {
-                        MessageBox.Show("O email informado não foi encontrado.");
+                        MessageBox.Show("O e-mail informado não foi encontrado.");
                     }
-
-
-
                 }
             }
-
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

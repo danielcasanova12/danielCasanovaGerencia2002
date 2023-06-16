@@ -125,7 +125,7 @@ namespace gerencia.Views
                     var evento = context.Eventos.FirstOrDefault(e => e.IdEvento == _idSelecionado);
                     if (evento != null)
                     {
-                        var convidados = context.Guests.Where(c => c.IdEventoGuest == _idSelecionado).ToList();
+                        var convidados = context.Guests.Where(c => c.EventoGuestIdEvento == _idSelecionado).ToList();
                         if (convidados.Any())
                         {
                             FmrListaConvidados tela2 = new FmrListaConvidados(_idSelecionado, _pagina);

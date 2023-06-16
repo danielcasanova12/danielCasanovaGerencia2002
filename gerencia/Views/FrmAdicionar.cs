@@ -73,6 +73,7 @@ namespace gerencia.Views
                 var novoEvento = new Evento
                 {
                     IdCriadorEvento = num,
+                    CriadorEventoIdUsuario = num,
                     NomeEvento = nome,
                     DescricaoEvento = descricao,
                     DataEvento = data,
@@ -108,8 +109,9 @@ namespace gerencia.Views
                     DataEvento = new DateTime(2023, 04, 15),
                     HorarioEvento = "19:09:09",
                     LocalizacaoEvento = "Rua 123, São Paulo",
-                    PrivacidadeEvento = Privacidade.SomenteConvidados,
-                    CriadorEventoIdUsuario = 1,
+                    PrivacidadeEvento = Privacidade.Publico,
+                    IdCriadorEvento = UserSession.GetUserId(),
+                    CriadorEventoIdUsuario = UserSession.GetUserId(),
                     GuestsEvento = new List<Guest>
                     {
                         new Guest

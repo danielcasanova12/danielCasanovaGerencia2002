@@ -56,7 +56,7 @@ namespace gerencia.Views
             {
                 // Obter todos os convidados do evento com id 3
                 var convidados = (from g in db.Guests
-                                  where g.IdEventoGuest == _numero
+                                  where g.EventoGuestIdEvento == _numero
                                   select new
                                   {
                                       IdGuest = g.IdGuest,

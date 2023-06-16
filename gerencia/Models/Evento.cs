@@ -27,6 +27,7 @@ namespace gerencia.Models
         public Usuario CriadorEvento { get; set; }
         [Required]
         public Privacidade PrivacidadeEvento { get; set; }
+        public int CriadorEventoIdUsuario  { get; set; }
         public ICollection<Guest> GuestsEvento { get; set; }
 
     }

@@ -18,7 +18,7 @@ namespace gerencia.Models
         public Evento EventoGuest { get; set; }
         [ForeignKey("Usuario")]
         public int UsuarioGuestIdUsuario { get; set; }
-
+        public int EventoGuestIdEvento { get; set; }
         public Usuario UsuarioGuest { get; set; }
     }
 }
