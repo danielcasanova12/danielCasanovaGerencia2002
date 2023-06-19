@@ -6,11 +6,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using gerencia.Enuns;
+using Microsoft.EntityFrameworkCore;
 
 namespace gerencia.Models
 {
 
-    public class Evento
+    public class Evento:Entidade
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -29,6 +30,30 @@ namespace gerencia.Models
         public Privacidade PrivacidadeEvento { get; set; }
         public int CriadorEventoIdUsuario  { get; set; }
         public ICollection<Guest> GuestsEvento { get; set; }
+
+
+
+        public int GetIdEvento()
+        {
+            return IdEvento;
+        }
+
+        public void SetIdEvento(int value)
+        {
+            IdEvento = value;
+        }
+
+        public override void ExibirInformacoes()
+        {
+            Console.WriteLine(NomeEvento);
+            Console.WriteLine(DescricaoEvento);
+            Console.WriteLine(DataEvento);
+            Console.WriteLine(HorarioEvento);
+            Console.WriteLine(LocalizacaoEvento);
+            Console.WriteLine(CriadorEvento);
+            Console.WriteLine(PrivacidadeEvento);
+
+        }
 
     }
 

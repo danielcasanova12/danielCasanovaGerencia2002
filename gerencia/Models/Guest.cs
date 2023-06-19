@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace gerencia.Models
 {
-    public class Guest
+    public class Guest : Entidade
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -20,5 +20,19 @@ namespace gerencia.Models
         public int UsuarioGuestIdUsuario { get; set; }
         public int EventoGuestIdEvento { get; set; }
         public Usuario UsuarioGuest { get; set; }
+
+
+
+
+        public override void ExibirInformacoes()
+        {
+            Console.WriteLine(IdEventoGuest);
+            Console.WriteLine(EventoGuest);
+            Console.WriteLine(UsuarioGuestIdUsuario);
+            Console.WriteLine(EventoGuestIdEvento);
+            Console.WriteLine(UsuarioGuest);
+
+        }
+
     }
 }

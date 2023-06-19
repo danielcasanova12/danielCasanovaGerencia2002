@@ -72,7 +72,7 @@ namespace gerencia.Views
                 int pesquisa2 = int.Parse(inputRemover.Text);
                 using (var db = new EventosContext())
                 {
-                    var eventosPublicos = db.Eventos.Where(e => e.IdEvento == pesquisa2 && e.IdCriadorEvento == idUsuarioLogado).ToList();
+                    var eventosPublicos = db.Eventos.Where(e => e.GetIdEvento() == pesquisa2 && e.IdCriadorEvento == idUsuarioLogado).ToList();
                     dataGridView5.DataSource = eventosPublicos;
                     dataGridView5.Columns["CriadorEvento"].Visible = false;
                     dataGridView5.Columns["IdCriadorEvento"].Visible = false;

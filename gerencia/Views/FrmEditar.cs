@@ -54,7 +54,7 @@ namespace gerencia.Views
                 int id = int.Parse(inputId.Text);
                 using (var context = new EventosContext())
                 {
-                    var evento = context.Eventos.FirstOrDefault(e => e.IdEvento == id);
+                    var evento = context.Eventos.FirstOrDefault(e => e.GetIdEvento() == id);
                     int num = UserSession.GetUserId();
                     if (num != evento.IdCriadorEvento)
                     {
@@ -121,7 +121,7 @@ namespace gerencia.Views
                 try
                 {
                     int id = int.Parse(inputId.Text);
-                    var evento = context.Eventos.FirstOrDefault(e => e.IdEvento == id);
+                    var evento = context.Eventos.FirstOrDefault(e => e.GetIdEvento() == id);
                     int num = UserSession.GetUserId();
                     if (num != evento.IdCriadorEvento)
                     {

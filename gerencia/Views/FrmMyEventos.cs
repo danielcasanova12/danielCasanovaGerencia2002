@@ -80,7 +80,7 @@ namespace gerencia.Views
         {
             using (var context = new EventosContext())
             {
-                var evento = context.Eventos.FirstOrDefault(e => e.IdEvento == _idSelecionado);
+                var evento = context.Eventos.FirstOrDefault(e => e.GetIdEvento() == _idSelecionado);
                 if (evento != null)
                 {
                     Privacidade privacidade = evento.PrivacidadeEvento;
@@ -122,7 +122,7 @@ namespace gerencia.Views
             {
                 using (var context = new EventosContext())
                 {
-                    var evento = context.Eventos.FirstOrDefault(e => e.IdEvento == _idSelecionado);
+                    var evento = context.Eventos.FirstOrDefault(e => e.GetIdEvento() == _idSelecionado);
                     if (evento != null)
                     {
                         var convidados = context.Guests.Where(c => c.EventoGuestIdEvento == _idSelecionado).ToList();

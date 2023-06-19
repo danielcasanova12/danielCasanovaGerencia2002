@@ -42,7 +42,7 @@ namespace gerencia.Views
         {
             using (var context = new EventosContext())
             {
-                var evento = context.Eventos.FirstOrDefault(e => e.IdEvento == _numeroRecebido);
+                var evento = context.Eventos.FirstOrDefault(e => e.GetIdEvento() == _numeroRecebido);
                 if (evento != null)
                 {
                     string email = inputEmail.Text;
@@ -50,7 +50,7 @@ namespace gerencia.Views
 
                     if (usuarioExistente != null)
                     {
-                        int eventoId = evento.IdEvento;
+                        int eventoId = evento.GetIdEvento();
                         var guestExistente = context.Guests.FirstOrDefault(g => g.UsuarioGuest.EmailUsuario == email && g.EventoGuestIdEvento == eventoId);
                         if (guestExistente != null)
                         {

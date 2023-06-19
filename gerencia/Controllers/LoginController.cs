@@ -28,13 +28,14 @@ namespace gerencia.Controllers
                     }
                 }
             }
+
             catch (Exception ex)
             {
                 MessageBox.Show("Ocorreu um erro: " + ex.Message);
                 return false;
             }
 
-        }
+}
     }
     
 }

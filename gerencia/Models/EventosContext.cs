@@ -14,6 +14,7 @@ namespace gerencia.Models
         public DbSet<Evento> Eventos { get; set; }
         public DbSet<Guest> Guests { get; set; }
 
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
 

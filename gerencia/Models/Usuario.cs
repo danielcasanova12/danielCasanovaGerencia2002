@@ -11,7 +11,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace gerencia.Models
 {
-    public class Usuario
+    public class Usuario : Entidade // HERANÇA POLIMORFISMO
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -27,21 +27,16 @@ namespace gerencia.Models
         [Required]
         public string SenhaUsuario { get; set; }
 
-    }
-    public class UserSession
-    {
-        private static int userId;
 
-        public static void SetUserId(int userId)
+        public override void ExibirInformacoes()
         {
-            UserSession.userId = userId;
+            Console.WriteLine(NomeUsuario);
+            Console.WriteLine(EmailUsuario);
+            // ABSTRAÇÃO
         }
 
-        public static int GetUserId()
-        {
-            return UserSession.userId;
-        }
     }
+
 
 }
 
